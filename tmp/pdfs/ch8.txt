@@ -1,0 +1,713 @@
+
+===== PDF PAGE 1 =====
+ITT 420
+Chapter 8
+Service 
+Recommendations
+Prepared by: 
+Raihana Md Saidi
+(raihana@fskm.uitm.edu.my) 
+
+
+===== PDF PAGE 2 =====
+Chapter 8 Objectives
+ Determine the process of observing information 
+about the state of things for use in decision 
+making.
+ Discuss important component of providing a 
+reliable, professional service.
+ Discuss issues in common application services.
+ITT 420
+
+===== PDF PAGE 3 =====
+Chapter 8 Outline
+ Service Monitoring 
+ Name Spaces
+ Name Services
+ Email Service
+ Print Service
+ Data Storage
+ Backup and Restore
+ Software Repositories
+ Web Services
+ITT 420
+
+===== PDF PAGE 4 =====
+Monitoring
+ Monitoring is the primary way we gain visibility 
+into the systems we run. 
+ It is the process of observing information 
+about the state of things for use in decision 
+making.
+ Need two types of monitoring
+ Real-time alerts: alert when network interface 
+goes up or down, heavy load, security, etc.
+ Historical trends: record overall network usage 
+in order to plan for future capacity and detect 
+behavorial abnormalities before they become 
+problems.
+Service Monitoring
+
+===== PDF PAGE 5 =====
+Monitoring
+ Building a monitoring system: Some of the pitfalls 
+to watch out for
+ Historical monitoring: Gathering, storing, and 
+viewing the data
+ Real-time monitoring: Problem detection and 
+alerting
+ Scaling challenges: Prioritization, cascading alerts, 
+and coordination
+ Centralization: Building a shared platform
+ Advanced monitoring: End-to-end tests, 
+application response times, compliance 
+monitoring, and meta-monitoring
+Service Monitoring
+
+===== PDF PAGE 6 =====
+Basic Rules
+ A namespace consists of
+- A set of unique key
+- A set of attributes associated with each key
+ The basic rules of namespaces are very 
+simple:
+- Namespaces need policies: naming, longevity, 
+locality, and exposure.
+- Namespaces need procedures: adding, 
+changing, and deleting.
+- Namespaces need centralized management
+Namespace
+
+===== PDF PAGE 7 =====
+Defining Names
+ Functional: Names have functions—for example, 
+account names for a specific role (admin, 
+secretary, guest), or names for permission groups 
+(webmasters, marketing).
+ Descriptive: Descriptive names usually 
+communicate factual information, rather than 
+rules (geographic, print type, customer type).
+ Formula-based: Names fit a strict formula
+ Theme: All name fits a theme.
+ No standard
+ Hybrid 
+Namespace
+
+===== PDF PAGE 8 =====
+Name Lifetime
+ When are names removed?
+- Immediately after PC, user leaves org
+- Set time after resources is no longer in use
+ When are names re-used?
+- Immediately: functional names
+- After a set time: usernames, email 
+addresses
+Namespace
+
+===== PDF PAGE 9 =====
+Name Usage
+ A single namespace may be used in multiple 
+name services. For example, the login ID 
+namespace is used in the user accounts 
+database, the HR database, the authentication 
+service, the authorization/permissions service, the 
+email system, and so on. 
+ For each namespace, you need to consider the 
+following:
+- Scope: Where will the namespace be used?
+- Consistency: When will attributes associated with a 
+name be kept consistent across nameservices that 
+use the namespace?
+- Authority: For attributes that are to be kept 
+consistent across name services, which service is 
+the authoritative source?
+Namespace
+
+===== PDF PAGE 10 =====
+Nameservice Data
+ When setting up a specific nameservice, there are a 
+number of questions that we need to answer:
+- Which data will be stored in this nameservice?
+- Which namespaces does this nameservice use?
+- What are the consistency requirements for the data?
+- How will the consistency requirements be met?
+- Which nameservice is authoritative for data with a strong 
+consistency requirement?
+- How is the data stored in this nameservice accessed?
+- What are the limits of those access methods and how 
+do they scale?
+- What is the data capacity limit for this nameservice?
+Nameservice
+
+===== PDF PAGE 11 =====
+Nameservice Reliability
+ The first and most important thing to consider 
+when setting up any specific nameservice is 
+that it needs to be highly reliable. 
+ Many other services rely on nameservices, so 
+a failure of a nameservice can cause 
+widespread failures that cascade through 
+other services.
+ We will look at DNS, DHCP,LDAP, 
+authentication, AAA, and, briefly, databases.
+Nameservice
+
+===== PDF PAGE 12 =====
+DNS
+ Clients and application servers make 
+continuous streams of DNS queries, mostly 
+unbeknownst to the end users.
+ Client machines are configured with one 
+or more DNS resolvers
+ Having multiple resolvers configured on 
+each client is one element of resilience for 
+the DNS service.
+Nameservice Reliability
+
+===== PDF PAGE 13 =====
+DNS Anycast
+ An anycast address looks like a normal 
+unicast IP address, but the routers will 
+route packets to any one of the machines 
+that are advertising that address, using 
+the routing protocol’s metrics to 
+determine the best route
+ Other than making the DNS servers’ IP 
+addresses independent of the clientside 
+configuration, anycast allows for much 
+faster failover for the client.
+Nameservice Reliability
+
+===== PDF PAGE 14 =====
+DNS Anycast
+Nameservice Reliability
+
+===== PDF PAGE 15 =====
+DNS Multiple Authoritative and 
+Root Server 
+ The servers to which clients send DNS 
+queries are called resolvers or DNS 
+caching servers. 
+ These are the servers that respond directly 
+to clients. 
+ They are configured with a set of DNS root 
+servers, and do not need any information 
+other than that, although they can have 
+more complex configurations
+Nameservice Reliability
+
+===== PDF PAGE 16 =====
+DNS Master
+ Authoritative DNS servers contain the DNS zone data. A 
+DNS zone can, and should, be served by multiple 
+authoritative DNS servers.
+ Authoritative DNS servers can be set up in a master/slave 
+configuration, where one server is the true authority for the 
+zone, and the other authoritative DNS servers contain 
+copies of the data, which are updated from the master.
+ They can also be set up in a multimaster configuration.
+ In the single master and multiple slaves configuration, you 
+need to consider how to make the master resilient to 
+failures. If the master fails, the slaves will continue to serve 
+the DNS zone data, but dynamic DNS updates will no 
+longer work.
+ The resilience options available for the master depend on 
+the server architecture.
+Nameservice Reliability
+
+===== PDF PAGE 17 =====
+DHCP
+ The Dynamic Host Configuration Protocol 
+(DHCP) is another nameservice.
+ When setting up a DHCP service, you 
+should always set up DHCP servers in pairs 
+and take advantage of this failover 
+feature.
+ Since the DHCP servers are defined on 
+every subnet, it is not a trivial task to 
+switch to another DHCP server when one 
+fails. Using DHCP failover pairs means that 
+the service keeps running even when one 
+server is down
+Nameservice Reliability
+
+===== PDF PAGE 18 =====
+LDAP
+ Lightweight Directory Access Protocol (LDAP) 
+servers also provide a nameservice
+ It is commonly used for providing distributed 
+directories for authentication databases; email, 
+phone, and address directories; and distributed 
+databases of systems, networks, services, and 
+applications.
+ One common way to set up a resilient LDAP 
+service is to place the master behind a load 
+balancer, with all updates being directed to one 
+of the servers.
+ Microsoft’s ActiveDirectory (AD) is based on LDAP 
+in a multi-master setup, with all the domain 
+controllers (DCs) being masters. It is also commonly 
+used to provide DNS services, with the LDAP 
+directory feeding the AD-integrated DNS service.
+Nameservice Reliability
+
+===== PDF PAGE 19 =====
+Authentication, Authorization, 
+and Accounting
+ Authentication, authorization, and accounting 
+(AAA, or Triple-A) is another core nameservice that 
+most enterprises need to provide. The Remote 
+Authentication Dial-In User Service (RADIUS) and 
+the Terminal Access Controller Access-Control 
+System Plus (TACACS+) protocols are commonly 
+used for AAA services. 
+ Typically, AAA servers are configured to refer to 
+other external nameservices so as to verify user 
+identity and to obtain a set of authorization 
+parameters.
+ AAA services are typically accessed by other 
+services. For example, an enterprise might offer a 
+service that requires a user to log in, and then 
+grants permission to certain parts of the service 
+based on what that user is permitted to access
+Nameservice Reliability
+
+===== PDF PAGE 20 =====
+Authentication, Authorization, 
+and Accounting
+Nameservice Reliability
+
+
+===== PDF PAGE 21 =====
+Database
+Nameservice Reliability
+ Databases, such as the HR database, CMDB, 
+and centralized authorization database, also 
+provide nameservices, and are often the 
+master databases that drive changes in other 
+nameservice databases and other systems.
+ For example, when someone leaves the 
+company, a change in the HR database that 
+marks this person as no longer an employee 
+should result in automatic changes in all the 
+other directories: the authentication services; 
+the email, phone, and address directories; 
+and the authorization database.
+
+===== PDF PAGE 22 =====
+Privacy Policy
+Email Service
+ Personal Use Policy
+ - Personal vs Commercial
+ - When may employee email be read?
+  : By whom?
+  : Under what circumstances
+ - Automatic monitoring
+ Retention policy
+ - Legal requirement
+
+===== PDF PAGE 23 =====
+Namespace 
+Email Service
+ Avoid first.last format addresses
+ - There will be duplicates: John.smith.
+ - Use middle initial?
+ - Append numbers?
+ Create unique organization-wide 
+namespace
+ - Use directory to lookup addresses
+
+===== PDF PAGE 24 =====
+Reliability
+Email Service
+ Customers expect same reliability as 
+power
+ - Failures generate many support calls
+ Reliability measures
+- Redundant servers
+- Backup MX hosts
+- RAID arrays
+- Multiple NICs, power supplies, processors
+
+===== PDF PAGE 25 =====
+Simplicity 
+Email Service
+ An email service has five main parts:
+ Mail transport: The mail transport agent (MTA) gets email 
+from place to place, usually from server to server.
+ Mail delivery: Mail delivery agents (MDAs) receive email 
+messages from the MTA and store them at the 
+destination server.
+ Access: Email access servers provide the access 
+protocols (POP3, IMAP4) that allow a mail user agent 
+(MUA) on a customer workstation to access individual 
+emails.
+ List processing: List processing is how one message gets 
+delivered to a group of people on a list.
+ Filtering: This component consists of antispam and 
+antivirus filtering
+
+===== PDF PAGE 26 =====
+Security Issues 
+Email Service
+ Mail server as target
+➢ Complexity of mail leads to vulnerabilities
+➢ Mail is an asset attackers want to take
+ Email as a conduit
+➢ Brings viruses and trojans into organization
+➢ Leaks confidential information outward
+ Email relaying
+➢ Open relay used by spammers and scammers
+ Intercepting email
+
+===== PDF PAGE 27 =====
+Other email services
+Email Service
+ Encryption
+ Email retention policy
+ Communication: For the customers of an 
+email service, it is important to ensure that 
+everyone who uses the system 
+understands the policies associated with 
+the system
+
+===== PDF PAGE 28 =====
+Level of Centralization
+Print Service
+ A typical office arrangement is to have one printer 
+per section of a building, be it a hallway, wing, or 
+floor. These printers can be accessed either by 
+anyone in the company or by anyone in the same 
+cost center.
+ More printers usually means more convenience: a 
+shorter walk to the printer or increased variety of 
+types of printers available. However, having more 
+printers costs more in a variety of ways.
+ By comparison, a shared, centralized printer can 
+be so much less expensive that you can use some 
+of the savings to purchase a significantly higher-
+quality printer.
+
+===== PDF PAGE 29 =====
+Print Architecture Policy
+Print Service
+ The goal of this document is to indicate how many people 
+will share a printer for general printing (that is, one printer 
+per desktop, one per hallway, one per building, one per 
+floor), who qualifies for personal printers, and how the 
+printers will be networked
+ The issue of who orders supplies and who resupplies the 
+printers should also be part of the written policy.
+ An organization should also have a documented printer 
+equipment standard.
+ Divided into TWO part:
+1. specify long-term standards, such as whether duplexing 
+units (when available) should be purchased, which 
+protocol printers must speak, how they are connected to 
+the network
+2. list of currently recommended printers and configurations
+
+===== PDF PAGE 30 =====
+Documentation 
+Print Service
+ SAs must provide three kinds of printing 
+documentation to their customers:
+ Print HOWTO
+ List of printers
+ Label
+
+===== PDF PAGE 31 =====
+Environmental Issue
+Print Service
+ Toner is toxic. Printing kills trees, and 
+discarded printouts fill up landfills. 
+ Even recycling has both costs and 
+environmental impacts; a page that is not 
+printed has a lower impact than a page 
+that is printed and then recycled. Print 
+systems must be designed to minimize 
+waste. Toner cartridges should be 
+recycled. 
+
+===== PDF PAGE 32 =====
+Terminology 
+Data Storage
+ Key individual disk component
+➢ Spindle, platters, head
+➢ Solid-state disk
+➢ Drive controller
+➢ Host bus adapter
+ RAID
+➢ multiple independent hard drives to provide 
+storage that is larger, more reliable, or faster than 
+a single drive can provide.
+➢ Each RAID technique is called a level
+
+
+===== PDF PAGE 33 =====
+Terminology 
+Data Storage
+ Volume and File Systems
+➢ A volume is a chunk of storage as seen by the 
+server. Originally, a volume was a disk, and 
+every disk was one volume
+➢ Each volume is formatted with a file system.
+ Directly Attached Storage (DAS)
+ Network Attached Storage (NAS)
+ Storage Area Network (SAN)
+
+===== PDF PAGE 34 =====
+Managing Storage
+Data Storage
+ Reframing Storage as a Community Resource
+ Conducting a Storage-Needs Assessment
+ Mapping Groups onto Storage Infrastructure
+ Developing an Inventory and Spares Policy
+ Planning for Future Storage
+ Establishing Storage Standards
+
+===== PDF PAGE 35 =====
+Storage as a Service
+Data Storage
+ SLA
+➢ SLAs are typically expressed in terms of availability and response 
+time.
+ Reliability
+➢ RAID, NAS
+ Backups
+➢ RAID is not a Backup Strategies
+➢ RAID mirrors as Backup
+➢ RAID mirrors to speed backup
+➢ NAS and backup
+➢ SAN and backup 
+
+===== PDF PAGE 36 =====
+Evaluating New Storage 
+Service 
+Data Storage
+ Drive speed
+ Fragmentation
+ Storage Limits: Disk Access Density Gap
+➢ The gap between the increase in how much a disk can 
+hold and how quickly you can get data on and off the 
+disk is widening. This gap, which is known as disk access 
+density (DAD),
+ Continuous Data Protection
+➢ CDP is the process of copying data changes in a 
+specified time window to one or more secondary 
+storage locations
+
+===== PDF PAGE 37 =====
+Common Data Storage 
+Problem
+Data Storage
+ Large physical infrastructure
+ Timeouts
+ Saturation behaviour
+ Examples:
+➢ Burst I/O speed of drives versus sustained I/O speeds 
+(most applications rarely burst)
+➢ Bus speed of the chassis
+➢ Shared backplane speed
+➢ Controller and/or HBA speed
+➢ Memory speed of caching or pipelining memory
+➢ Network speed
+
+===== PDF PAGE 38 =====
+Reasons for Restore
+Backup and Restore
+ The reasons are as follows:
+▪ Accidental file deletion: A customer has 
+accidentally erased one or more files and 
+needs to have them restored.
+▪ Disk failure: A hard drive has failed, and all data 
+needs to be restored.
+▪ Archival: For business reasons, a snapshot of the 
+entire “world” needs to be made on a regular 
+basis for disaster-recovery, legal, or fiduciary 
+reasons.
+
+===== PDF PAGE 39 =====
+Guideline
+Backup and Restore
+ Organizations need a corporate-wide document 
+that defines terminology and dictates 
+requirements for data-recovery systems.
+ The guideline should begin by defining:
+ 1. why backups are required
+ 2. what constitutes a backup
+ 3. which kind of data should be backed up
+ A data Recovery SLA and Policy
+ The backup schedule
+ Time and capacity planning
+➢ Backup speed
+➢ Restore speed
+➢ High availability database
+
+===== PDF PAGE 40 =====
+Consumable Planning
+Backup and Restore
+ Tape inventory
+➢ Being able to restore files is dependent on 
+the quality of your inventory. The better the 
+inventory is, the more quickly the restore 
+can be done
+ Backup media and off-site storage
+➢ Backup tapes must be stored somewhere 
+safe.
+➢ Off-site storage of backup media is an even 
+better idea.
+
+===== PDF PAGE 41 =====
+Centralization 
+Backup and Restore
+ Backups should be centralized because 
+they are expensive and important. 
+Making the right investments can spread 
+the cost of the backup and restore system 
+over many systems.
+ Two major costs can be reduced through 
+centralization
+
+===== PDF PAGE 42 =====
+Software Repository
+Software Repositories 
+ A software repository is a system that stores 
+software packages and makes them available for 
+installation by clients. 
+ Types of repositories
+ Software release distribution: An organization that 
+produces software can use a repository to make 
+that software available to others.
+ OS repository: Operating system vendors set up 
+repositories to distribute entire operating systems
+ Vendor mirror: A vendor mirror is an exact copy of 
+the vendor’s OS repository
+ Controlled mirror: Sometimes it is useful to add a 
+delay between when a vendor releases a 
+package and when local machines have access 
+to it.
+
+===== PDF PAGE 43 =====
+Software Repository
+Software Repositories 
+ A software repository is a system that stores 
+software packages and makes them available for 
+installation by clients. 
+ Types of repositories
+ Software release distribution: An organization that 
+produces software can use a repository to make 
+that software available to others.
+ OS repository: Operating system vendors set up 
+repositories to distribute entire operating systems
+ Vendor mirror: A vendor mirror is an exact copy of 
+the vendor’s OS repository
+ Controlled mirror: Sometimes it is useful to add a 
+delay between when a vendor releases a 
+package and when local machines have access 
+to it.
+
+===== PDF PAGE 44 =====
+Managing Repository
+Software Repositories 
+ Here are some key points to decide and 
+document:
+ Who has access? Is anonymous and/or Internet 
+access permitted?
+ Who can add packages?
+ Who can promote a package between stages?
+ How is a user’s identity authenticated?
+ For which OSs are the packages suitable?
+ Where should users report bugs?
+ How do customers request packages to be 
+added?
+ How are software licenses managed? How is 
+compliance verified?
+ Is source code archived somewhere in case the 
+original source is unattainable?
+
+===== PDF PAGE 45 =====
+Simple Web Services
+Web Services
+ There are four basic web server types:
+ Static web server: A static web server is one that 
+serves only documents that don’t change or 
+that change only rarely
+ CGI servers: CGI servers generate pages 
+dynamically rather than simply loading them 
+from disk.
+ Database-driven web sites: Database-driven 
+web sites generate each web page from 
+information in a database. 
+ Multimedia servers: A multimedia server is 
+primarily a web server that has content that 
+includes media files, such as video or audio. 
+
+===== PDF PAGE 46 =====
+Scaling 
+Web Services
+ Two main types of scaling are horizontal 
+and vertical.
+ When drawing a representation of the 
+web service cluster, the machines added 
+for horizontal scaling tend to be in the 
+same row, or level; for vertical scaling, 
+they are in groups arranged vertically, as 
+they follow a request flowing through 
+different subsystems
+
+===== PDF PAGE 47 =====
+Horizontal Scaling
+Web Services
+ In horizontal scaling, a web server or web service resource 
+is replicated and the load divided among the replicated 
+resources. An example is two web servers with the same 
+content, each getting approximately half the requests.
+Horizontal scaling with a load balancer and shared database
+
+===== PDF PAGE 48 =====
+Vertical Scaling
+Web Services
+ Another way to scale is to separate out the various 
+kinds of subservices used in creating a web page, 
+rather than duplicating a whole machine
+
+===== PDF PAGE 49 =====
+Security
+Web Services
+ There are still several reasons to practice good web security 
+internally:
+ Many viruses transmit themselves from machine to machine via 
+email and then compromise internal servers.
+ Intranet sites may contain privileged information that requires 
+authentication  to view, such as human resources or finance 
+information.
+ Most organizations have visitors—temps, contractors, vendors, 
+speakers, interviewees—who may be able to access your web 
+site via conference room network ports or with a laptop while 
+on site.
+ If your network is compromised, whether by malicious intent or 
+accidentally by a well-meaning person setting up a wireless 
+access point reachable from outside the building, you need to 
+minimize the potential damage that could occur.
+ Security and reliability go hand-in-hand. Some security patches 
+or configuration fixes also protect against accidental denial-of-
+service attacks that could occur and will make your web server 
+more reliable.
+
+===== PDF PAGE 50 =====
+Content Management
+Web Services
+ Providing a content-management system 
+(CMS) empowers users to perform selfservice 
+updates of the web content. 
+ This process should have a specific policy on 
+updates. Ideally, the policy should distinguish 
+three types of alterations that might have 
+different processes associated with them:
+➢ Update: Adding new material or replacing one 
+version of a document with a newer one
+➢ Change: Altering the structure of the site, such 
+as adding a new directory or redirecting links
+➢ Fix: Correcting document contents or site 
+behavior that does not meet the standards

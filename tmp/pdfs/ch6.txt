@@ -1,0 +1,584 @@
+
+===== PDF PAGE 1 =====
+ITT 420
+Chapter 6
+Helpdesks and support
+Prepared by: 
+Raihana Md Saidi
+(raihana@fskm.uitm.edu.my) 
+Thomas A. Limoncelli,Christina J. Hogan,Strata R. Chalup
+The Practice of System and Network Administration
+3rd, Addison-Wesley Professional, 2016
+ISBN: 9780133415100
+
+
+===== PDF PAGE 2 =====
+Chapter 6 Objectives
+ Describe customer support and helpdesks: 
+what they are, how to organize them, how to 
+manage them.
+ Identify the process of handling an incident 
+report which involved involves understanding a 
+person’s needs, proposing solutions, working 
+with the customer to provide a solution.
+ Discuss the process of debugging which consist 
+of understanding the problem, finding the 
+cause, making the change that makes the 
+problem solved.
+ITT 420
+
+===== PDF PAGE 3 =====
+Chapter 6 Outline
+ Customer Support
+ Handling an Incident Report
+ Debugging
+ Fixing Things Once
+ Documentation
+ITT 420
+
+===== PDF PAGE 4 =====
+Having a helpdesk
+ Physical (walk-up counter) or virtual 
+(phone or email)
+ The transition from ad hoc to formal 
+helpdesk can be uncomfortable to 
+customers.
+ SAs should expect this push-back and do 
+their best to ease the transition.
+ Communicating the new helpdesk 
+procedures clearly is important.
+ Self-help systems are also popular but 
+should not be considered a replacement 
+for systems that involve human interaction
+Customer Support
+
+===== PDF PAGE 5 =====
+Offering a Friendly Face
+ Physical helpdesk – interior design should 
+be pleasant and welcoming. 
+ Web-based virtual helpdesk – welcoming, 
+design that uses soothing colors, readable 
+fonts
+ Faces of the staff members also should be 
+welcoming and friendly, as should their 
+personalities.
+ A good-natured supervisor who can 
+laugh and is always friendly will attract 
+similar staff, who will reflect such an 
+attitude with customers.
+Customer Support
+
+
+===== PDF PAGE 6 =====
+Reflecting Corporate Culture
+ The look and feel of your helpdesk should reflect 
+corporate culture.
+ Take the time to consider the culture and “look” of 
+your helpdesk as compared to that of the 
+customers they serve. 
+ Try to evolve to a culture that suits the customers 
+served.
+ i.e : dress codes and ways of conducting business, 
+creative, very relaxed protocol.
+Customer Support
+
+
+===== PDF PAGE 7 =====
+Having enough staff
+ Sizing a helpdesk staff is very difficult because 
+it changes from situation to situation.
+ First-tier SAs have a similar skill level as second-
+tier SAs at other helpdesks, to meet the more 
+highly technical level of questions. Ratio 40:1.
+ E-commerce sites usually have a separate 
+helpdesk for internal questions and a 
+“customer-facing” helpdesk. Ratio can be 
+10,000:1 or 1,000,000:1
+ Rather than focus on customer-to-attendant 
+ratios, it is better to focus on call volume ratios 
+and time-to-call completion.
+Customer Support
+
+===== PDF PAGE 8 =====
+Defining Scope of Support
+ Having a written scope-of-support policy 
+is one of the best gifts management can 
+give to an SA group.
+ What is being supported? 
+ Who will be supported? 
+ Where are the customers? 
+ When is support provided? 
+ How long should the average request take to 
+complete? 
+ Overworked SAs often do not have a 
+written scope-of-support policy.
+Customer Support
+
+===== PDF PAGE 9 =====
+Specifying How to Get Help
+ Scope-of-support document is a document 
+that specifies how to get help: by phone, 
+email, a ticket system, default Windows 
+background wallpaper images:
+CompanyName IT helpdesk: [phone number] [email address] [web site]
+ To help the staff save time. 
+ If customers have not been given clear 
+directions on the proper way to get help, 
+they will contact SAs directly, interrupting 
+them at inappropriate time.
+ Even worse, SAs may be contacted at home!
+Customer Support
+
+
+===== PDF PAGE 10 =====
+Defining Processes for Staff
+ Very large helpdesks use scripts as part of 
+their training. 
+ Every service supported has an associated 
+flow of dialogue to follow to support that 
+service. 
+ For example, the script for someone calling to 
+request remote access service captures the 
+appropriate information and tells the operator 
+what to do, be it enable remote access 
+directly or forward the request to the 
+appropriate service organization. 
+ The script for a request to reset a password 
+would, for security reasons, require callers to 
+prove who they are, possibly by knowing a 
+unique piece of personal information, before 
+a new password would be set.
+Customer Support
+
+===== PDF PAGE 11 =====
+Establishing an Escalation Process
+ Escalation is a process by which an issue is moved 
+from the current staff person to someone with more 
+expertise. 
+ First line of operators should be able to handle 80 
+percent to 90 percent of all calls and escalate the 
+remaining calls to a second tier of support. 
+ Second tier may have more experience, more 
+training, and, possibly, other responsibilities. 
+ Larger organizations may have four or more tiers; 
+the higher tiers may include the people  who built 
+or currently maintain the service in question.
+Customer Support
+
+===== PDF PAGE 12 =====
+Establishing an Escalation Process
+Customer Support
+
+===== PDF PAGE 13 =====
+Defining “Emergency” in Writing
+ Every customer claims to have an emergency that 
+requires immediate attention. 
+ SAs may feel that customers are using this claim to 
+boss them around, which decreases morale and 
+increases stress levels.
+ Having a written policy empowers SAs to know 
+when to push back and gives them a document to 
+point to when they need it. 
+ If the customer still disagrees with this assessment, 
+the SA can pass the issue up to someone in 
+management, who can make the decision.
+ SA focus on technical duties and lets management 
+focus on setting priorities and providing resources.
+ Every company should be able to define what 
+constitutes an emergency.
+Customer Support
+
+===== PDF PAGE 14 =====
+Supplying Request-Tracking Software
+ Every helpdesk needs some kind of software to 
+help it manage requests.
+ Helpdesk software should permit some kind of 
+priority to be assigned to tickets.
+ Helps SAs manage their time. 
+ An SA should be able to easily list the top-priority 
+issues that have been assigned.
+ Collects logs about which kinds of requests are 
+made and by whom. 
+ Statistical analysis of such logs can be useful in 
+managing the helpdesk.
+ Can also automate the collection of data on 
+customer satisfaction.
+Customer Support
+
+===== PDF PAGE 15 =====
+Statistical Improvements
+ Historical statistics become much 
+more valuable when dealing with upper 
+management for budgeting and planning 
+purposes.
+ Better case for your budget if you can show 
+multiyear trends of customer growth, call 
+volume, types of calls, technologies used, 
+services provided, and customer satisfaction.
+ When you are asked to support a new 
+technology or service, you can use past data 
+to predict what the support costs may be.
+Customer Support
+
+
+===== PDF PAGE 16 =====
+After-Hours and 24/7 Coverage 
+ Customers are asking for 24/7 coverage more 
+often.
+ Full three-shift staff may be required in some 
+organizations.
+ No matter how SAs are contacted after hours, 
+the person must be compensated.
+ Some organizations have a salary incentive for 
+on-call time. 
+ Other organizations issue 
+compensation time either 
+officially or unofficially.
+Customer Support
+
+
+===== PDF PAGE 17 =====
+Different Helpdesks for Different Needs
+ It may make sense to have two separate 
+helpdesks: one for requesting new services and 
+another for reporting problems that arise after the 
+service.
+ Third group deals with installing the new service, 
+especially if it requires physical work.
+ The benefit of dividing the helpdesk this way is that 
+the two or three groups can be placed under 
+different supervisors. 
+ A supervisor can effectively manage only a certain 
+number of people.
+ Different groups can be separately trained for the 
+different skills required for their task.
+Customer Support
+
+===== PDF PAGE 18 =====
+Process overview
+ Structured process defining how customer 
+requests are gathered, evaluated, fixed, and 
+verified, Tom (Limoncelli 1999).
+ Customer requests are the trouble tickets, calls, 
+problem reports, etc.
+  
+Handling an Incident Report
+
+
+===== PDF PAGE 19 =====
+Method for processing customer requests are:
+ Phase A: The Greeting (“Hello!”)
+ – Step 1: The Greeting
+ Phase B: Problem Identification (“What’s wrong?”)
+ – Step 2: Problem Classification
+ – Step 3: Problem Statement
+ – Step 4: Problem Verification
+ Phase C: Planning and Execution (“Fix it.”)
+ – Step 5: Solution Proposals
+ – Step 6: Solution Selection
+ – Step 7: Execution
+ Phase D: Verification (“Verify it.”)
+ – Step 8: Craft Verification
+ – Step 9: Customer Verification/Closing
+Handling an Incident Report
+
+===== PDF PAGE 20 =====
+4 phases 9 steps
+Handling an Incident Report
+Phase A
+Phase B
+Phase C
+Phase D
+
+===== PDF PAGE 21 =====
+Optimizing Customer Care
+ Model-Based Training
+ Holistic Improvement
+ Increased Customer Familiarity
+ Special Announcements for Major Outages
+ Trend Analysis
+ Customers Who Know the Process
+ An Architecture That Reflects the Process
+Handling an Incident Report
+
+===== PDF PAGE 22 =====
+Understanding the Customer’s Problem
+ Customers may be trying to read their email and 
+aren’t able to.
+ They may report this in many ways: “My mail 
+program is broken” or “I can’t reach the mail server” 
+or “My mailbox disappeared!” Any of those 
+statements may be true, but the problem also could 
+be a network problem, a power failure in the server 
+room, or a DNS problem. 
+ These issues may be beyond the scope of what the 
+customer understands or should need to 
+understand. 
+ Therefore, it is important to gain a high-level 
+understanding of what the customer is trying to do.
+Debugging
+
+===== PDF PAGE 23 =====
+Fixing the Cause, Not the Symptom
+ To build sustainable reliability, SAs must find and fix 
+the cause of the problem, not simply work around 
+the problem or find a way to recover from it quickly. 
+ Although workarounds and quick recovery times are 
+good things, and sometimes necessary, fixing the 
+root cause of a problem is better.
+ “I had to exit and restart an application or service”
+ Deleting the log files fixes the symptoms, but 
+activating a script that would rotate and 
+automatically delete the logs would fix the problem.
+Debugging
+
+===== PDF PAGE 24 =====
+Being Systematic
+ Process of elimination entails removing different 
+parts of the system until the problem 
+disappears. The problem must have existed in 
+the last portion removed. 
+ Successive refinement involves adding 
+components to the system and verifying at 
+each step that the desired change happens.
+Debugging
+
+===== PDF PAGE 25 =====
+Six Classes of Network Bugs
+ Six classes of bugs can limit network 
+performance:
+ Packet losses, corruption, congestion, bad 
+hardware
+ IP routing, long round-trip times
+ Packet reordering
+ Inappropriate buffer space
+ Inappropriate packet sizes
+ Inefficient applications
+ Any one of these problems can hide all other 
+problems. This is why solving performance 
+problems requires a high level of expertise.
+Debugging
+
+===== PDF PAGE 26 =====
+Training Is the Most Important Tool
+ Formal training has a number of benefits:
+1. Off-site training takes you away from the interruptions 
+of your job and lets you focus on learning new skills.
+2. Formal training usually covers all the features, not only 
+the ones with which you’ve had time to experiment.
+3. Instructors often reveal bugs or features that the 
+vendor may not want revealed in print.
+4. Access to a lab of machines allows you to try things 
+that, because of production requirements, you 
+couldn’t otherwise try.
+5. You can list the training on your resume; this can be 
+more impressive to prospective employers than 
+actual experience, especially if you receive 
+certification.
+Debugging
+
+===== PDF PAGE 27 =====
+Understanding the Underlying Technology
+ Unix systems have a reputation for being very easy to 
+debug, most likely because so many experienced Unix 
+SAs have in-depth knowledge of the inner workings of the 
+system. Unix systems come with documentation about 
+their internals; early users had access to the source code 
+itself. Much of the system is driven by scripts that can be 
+read easily to gain an understanding of what is going on 
+behind the scenes.
+ Microsoft Windows developed an early reputation for 
+being a difficult system to debug when problems arose. 
+Rhetoric from the Unix community claimed that it was a 
+black box with no way to get the information you 
+needed to debug problems. In reality, there were 
+mechanisms, but the only way to learn about them was 
+through vendor-supplied training.
+Debugging
+
+===== PDF PAGE 28 =====
+Choosing the Right Tools
+ The best tool is one that provides the simplest 
+solution to the problem at hand, and can be 
+easily combined with other tools. The more 
+sophisticated a tool is, the more likely it will get 
+in its own way or simply be too big to carry to 
+the problem.
+ Example: NFS mounting problems can be 
+debugged with three simple tools: ping, 
+traceroute, and rpcinfo.
+Debugging
+
+===== PDF PAGE 29 =====
+Avoiding Temporary Fixes
+ Sometimes, constraints on time or resources 
+require a quick fix until a complete fix can be 
+scheduled. 
+ Sometimes, a complete fix can require an 
+unacceptable interruption of service in certain 
+situations, and a temporary fix has to suffice 
+until a maintenance window can be 
+scheduled. 
+ Sometimes, temporary fixes are required 
+because of resource issues. Maybe software will 
+have to be written or hardware installed to fix 
+the problem.
+Fixing Things Once
+
+===== PDF PAGE 30 =====
+Avoiding Temporary Fixes (cont)
+ If a disk is being filled by logs, a permanent fix 
+might be to add software that would rotate 
+logs. It may take time to install such software, 
+but in the meantime old logs can be manually 
+deleted.
+ The full log disk can be tempting on a busy day 
+to manually delete the older logs and move on 
+to the next task without recording the fact that 
+the issue needs to be revisited to implement a 
+permanent fix.
+Fixing Things Once
+
+===== PDF PAGE 31 =====
+Automation
+ One type of automation fixes symptoms and alerts 
+an SA so that he or she can fix it permanently. The 
+other type of automation fixes things permanently, 
+on its own.
+ Automation that fixes problems can be worrisome. 
+ Automation should be extremely careful in what it 
+does and should keep logs so that its work can be 
+audited.
+ Automation often fixes symptoms without fixing the 
+root cause. In that situation, it is critical that the 
+automation provide an alert that it has done 
+something so that an SA can implement a 
+permanent fix.
+Fixing Things Once
+
+===== PDF PAGE 32 =====
+What to Document
+ The things that are most important to 
+document tend to be either things that are 
+complicated and unpleasant or things that you 
+explain all the time.
+ A job description usually has two parts: the list 
+of responsibilities and the list of required skills. 
+ Generate the list of responsibilities by 
+enumerating the processes that you dislike and 
+that have been documented. 
+ Generate the list of required skills by drilling 
+down into each document and cataloging the 
+skills and technologies.
+Documentation
+
+===== PDF PAGE 33 =====
+A Simple Template for Getting Started
+1. Title: A simple title that others will understand.
+2. Metadata: The document’s author’s contact 
+information, and the revision date or history. 
+3. What: A description of the contents of the 
+document or the goal that someone can 
+achieve by following the directions. 
+4. How: The steps to take to accomplish the goal.
+Documentation
+
+===== PDF PAGE 34 =====
+Easy Sources for Documentation
+1. Saving Screenshots
+2. Capturing the Command Line
+3. Leveraging Email
+4. Mining the Ticket System
+Documentation
+
+===== PDF PAGE 35 =====
+The Power of Checklists
+ Some typical checklists include:
+ Tasks to be done for each new hire
+ Tasks to be done for each employee termination
+ Installation tasks for each operating system used at 
+a location
+ Processes for archiving and for off-site storage of 
+data as required by the legal department
+ Process for securing the OS before deploying a 
+machine
+Documentation
+
+===== PDF PAGE 36 =====
+Wiki Systems
+ A wiki is a web-based documentation repository 
+that makes it easy for anyone with appropriate 
+access to add and edit documents. 
+ Documents may contain plaintext, text with HTML, 
+or text with wiki-specific embedded formatting tags 
+or commands. 
+ A wiki usually has a built-in source code control 
+system to check document files in and out and to 
+retain revision history. 
+ More advanced wiki environments include user 
+authentication, automated tagging of updates 
+(date, time, user), per-user locking of files, access 
+control by user or group, and various degrees of 
+granularity of read/modify/publish permissions on 
+individual document directories or subdirectories.
+Documentation
+
+===== PDF PAGE 37 =====
+Findability
+ People today would prefer to search than read 
+through an index or table of contents. 
+ Most wiki systems now have a full text search 
+capability. 
+ Another way to make a documentation system 
+searchable is to have one long table of 
+contents that contains titles and descriptions. 
+People can use their web browser’s ability to 
+search within a page to find what they need. 
+ The description can include synonyms for 
+technical terms, as well as the technical name 
+for something, the brand name, and the 
+common name.
+Documentation
+
+===== PDF PAGE 38 =====
+A Content-Management System
+ A publication system for web sites. 
+ The CMS releases the article at a specific time, placing it 
+on the web site, updating tables of contents, and taking 
+care of other details. For an IT site, the CMS might permit 
+plug-ins that give portal features, such as summaries of 
+recent outages.
+ A CMS specifically consists of three layers:
+ The repository layer is generally a database but may 
+also be a structured file system with metadata. The 
+content is stored in this layer. 
+ The history layer implements version control, 
+permissions, audit trails, and such functionality as 
+assigning a global document identifier to new 
+documents. 
+ The presentation layer is the user interface.
+Documentation
+
+===== PDF PAGE 39 =====
+Additional Documentation Uses
+ Self-help desk: This area contains current status, major upcoming 
+changes, and the ability to create tickets. It also contains links to 
+other sources, such as the HOWTOs, FAQs, and monitoring 
+system.
+ Internal group-specific documents: Each group may want to 
+have internal documentation that describes how to perform 
+tasks that only that group can execute. 
+ How-to documents: A how-to or HOWTO document is a short 
+document that describes how to accomplish a particular task.
+ Frequently asked questions: The FAQs list the most common 
+queries about a particular topic, along with their answers. The 
+answers may point to a HOWTO document or self-help tools.
+ Reference lists: Reference lists are accumulated lists of things 
+that are not accessed often but that serve a specific purpose. 
+Procedures: Have a repository for procedures, checklists, run 
+books, and scripts. 
+ Technical library: Store vendor documentation, technical
+Documentation
+
+===== PDF PAGE 40 =====
+End of chapter 6

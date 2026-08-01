@@ -1,0 +1,698 @@
+
+===== PDF PAGE 1 =====
+ITT 420
+Chapter 7
+Change Processes
+Prepared by: Muhammad Azizi 
+(mazizi@fskm.uitm.edu.my) 
+
+
+===== PDF PAGE 2 =====
+Chapter 7 Objectives
+ Discuss change-management processes such as 
+the ones that exist in large enterprises.
+ Describes a technique for managing major planned 
+maintenance.
+ Explain differences between centralized and 
+decentralized services, the benefits of each, and 
+requirement to change a service’s structure.
+ Discuss general recommendations using centralized 
+or decentralized structures.
+ITT 420
+
+===== PDF PAGE 3 =====
+Chapter 7 Outline
+ Change Management
+ Server Upgrades
+ Maintenance Windows
+ Centralization Overview
+ Centralization Recommendations
+ Centralizing a Service
+ITT 420
+
+===== PDF PAGE 4 =====
+Change Management
+ Most of what SAs do involves making changes.
+ Most changes are small and have only a 
+localized impact, small users.
+ Other changes are large and have a bigger 
+impact. They may affect hundreds, thousands, or 
+millions of users.
+ Change Review Boards (CRB)
+ A CRB is responsible for assuring that a business is able to 
+make changes required by the business, in a 
+coordinated manner
+ CRB responsibility:
+ Defining change-management processes
+ Establishing definitions and standards for rating change risks
+ Reviewing (rejecting or approving) change requests
+ Coordinating post-change activities
+Change Management
+
+===== PDF PAGE 5 =====
+Change Review Board (CRB)
+Change Management
+
+
+===== PDF PAGE 6 =====
+Change Management
+ Process Overview
+ People write proposals on which changes will be made. 
+The CRB meets weekly to discuss and approve each 
+one.
+ There are two ways process faster:
+ First, proposals should be submitted early enough that 
+members can review them ahead of time.
+ Second, proposals should be pre-checked by a member of 
+the committee before they are seen by the full board.
+ Change Proposals
+ A change proposal should be a structured document or 
+form.
+ The SAs have to fill out a change control or change 
+proposal form.
+ The form should ask for a detailed explanation of which 
+changes they will make
+Change Management
+
+===== PDF PAGE 7 =====
+Change Classifications
+ Most CRBs use classifications similar to these:
+ Routine update: There is no expected outage and 
+a near-zero chance of unintended outages.
+ Major update: Many systems are affected or the 
+change requires a significant system, network, or 
+service outage.
+ Sensitive update: No outage is expected, but the 
+change is large and could result in an unintentional 
+outage.
+ Emergency update: This change must be done 
+before the next CRB meeting. The change may 
+require approval by one CRB member before 
+executing it, followed by full approval at the next 
+CRB.
+Change Management
+
+===== PDF PAGE 8 =====
+Risk Discovery and Quantification
+ Change requests should be rated as high, 
+medium, or low risk, with different levels of review 
+required for each category.
+ The risk rating is based on a combination of the 
+potential impact of a failure and the likelihood of 
+that failure.
+ Risk Matrix Table:
+Change Management
+
+
+===== PDF PAGE 9 =====
+Technical Planning
+ It is not sufficient to simply list what the change 
+will be or which commands you intend to type to 
+make the change.
+ A complete plan has these five primary parts:
+ The change process: Defines the steps of the change.
+ Testing documentation: Shows that the change process 
+has been successfully tested in a test or staging 
+environment.
+ Success criteria: Explains how the success or failure of the 
+change will be assessed.
+ Backout plan: Indicates how the system will be changed 
+back to the original state or configuration if the change is 
+not successful.
+ Decision point: Defines how and when you should decide 
+to implement a backout plan.
+Change Management
+
+===== PDF PAGE 10 =====
+Scheduling
+ Some companies may want major updates performed at 
+off-peak times.
+ Others may want all of them to happen in one 
+concentrated maintenance window.
+ Sensitive updates should happen outside of peak usage 
+times, to minimize the potential impact.
+ In some environments major and sensitive updates are 
+done late at night and on weekends. But engineer might 
+be sleepy during that period.
+Change Management
+
+
+===== PDF PAGE 11 =====
+Communication
+ We must make sure that the IT organization knows what is 
+happening and customers also know what is going on.
+ Customers need to understand how they will be 
+impacted: the date and time the change will occur.
+ The most effective communication method will vary from 
+company to company and depends on the company 
+culture.
+ companies may use other means of communication, such 
+as internal corporate social media systems like Facebook 
+at Work.
+ Larger companies have change-management tools that 
+require explicit approval from certain groups, depending 
+on the service being affected.
+Change Management
+
+===== PDF PAGE 12 =====
+Tiered Change Review Boards
+ Large companies have a tiered system of CRBs, providing 
+different levels of review depending on the risk rating for the 
+change.
+ The lowest-level CRBs are the technical management teams 
+for each technology. The CRB members’ primary function is to 
+ensure that the change has been properly planned and 
+tested.
+ The next-level CRB includes higher-level managers within the 
+IT organization.
+ The final CRB tier reviews all promoted high-risk changes. This 
+CRB has an overview of all the major initiatives in the 
+company, both from an IT perspective and from a business 
+perspective. This CRB reviews each change in light of the 
+business needs and the other high-risk changes.
+Change Management
+Change Freezes
+ CRBs often institute a change freeze—that is, a time when 
+sensitive and major updates are not permitted.
+ E.g. festive season, the end of fiscal year.
+
+===== PDF PAGE 13 =====
+Server Upgrades
+ The upgrade itself can be performed in many ways, but 
+there are two main strategies for upgrades:
+ Upgrade the host in-place
+ Build a new machine and migrate clients to it
+ A single tool is required to do this task successfully is a 
+piece of paper that will be used to maintain a checklist.
+ The Upgrade Process
+ The fundamental goal of any OS upgrade is that, at minimum, 
+all the services provided before the upgrade will work after 
+the upgrade.
+ The process is as follows:
+Server Upgrades
+
+===== PDF PAGE 14 =====
+The Upgrade Process
+Server Upgrades
+
+
+===== PDF PAGE 15 =====
+Maintenance Windows
+ Sometimes a company allocates a specific time slot for 
+major and risky changes to consolidate downtime to a 
+specific time when customers will be least affected.
+ Some companies are unable to have a large outage for 
+business reasons. Ecommerce sites and ISPs fall into this 
+category.
+ Process Overview
+ Maintenance window is by definition a short period in which a 
+lot of systems work must be performed. It is often disruptive to 
+the rest of the company, so the scheduling must be done in 
+cooperation with the customers.
+Maintenance Windows
+
+===== PDF PAGE 16 =====
+Maintenance Windows
+ Stages of Maintenance Windows
+Maintenance Windows
+
+
+===== PDF PAGE 17 =====
+Getting Management Buy-In
+ you will almost certainly need to avoid the end-of-month, 
+end-of-quarter, and end-of-fiscal year dates so that the 
+sales team can enter rush orders.
+ You also will need to avoid product release dates, if that is 
+relevant to your business
+Maintenance Windows
+Scheduling Maintenance Windows
+ Whether the planned maintenance window will cause a 
+disruption of services, or just reduce redundancy or 
+capacity, management needs to be aware of the plan 
+and sign off on it.
+ However, to get management buy-in, you will have to sell the 
+concept in terms of a benefit to the company, not in terms of 
+making the SA’s life easier.
+
+===== PDF PAGE 18 =====
+Managing Change Proposals
+ One week before the maintenance window, all change 
+proposals should have been submitted.
+ Here are some examples of change proposals. These proposals are 
+based on real-world scenarios.
+ Sample Change Proposal: SecurID Server Upgrade:
+Maintenance Windows
+
+
+===== PDF PAGE 19 =====
+Managing Change Proposals
+ Sample Change Proposal: SecurID Server Upgrade:
+Maintenance Windows
+
+
+===== PDF PAGE 20 =====
+Managing Change Proposals
+ Sample Change Proposal: SecurID Server Upgrade:
+Maintenance Windows
+
+
+===== PDF PAGE 21 =====
+Disabling Access
+ The very first task during a maintenance window is to disable or 
+discourage system access and provide reminders about the 
+maintenance window.
+ This process may involve the following steps:
+ Placing on all doors into the campus buildings notices with the 
+maintenance window times clearly visible.
+ Disabling all remote access to the site, whether by VPN, dedicated 
+lines, or wireless.
+ Making an announcement over the public address system in the 
+campus buildings to remind everyone that systems are about to go 
+down.
+ Changing the helpdesk voicemail message to announce the on-going
+     maintenance
+Maintenance Windows
+
+
+===== PDF PAGE 22 =====
+Ensuring Mechanics and 
+Coordination
+ Before the maintenance window opens, test console servers and 
+other tools that will be used during the maintenance window.
+ Shutdown/Boot Sequence
+ In most sites, some systems or sets of systems must be available for other systems 
+to shut down or to boot cleanly.
+ The most critical systems, such as console servers, name-service machines, 
+authentication servers, license servers, application servers, and data servers, 
+typically need to be booted before compute servers and desktops.
+ KVM, Console Service, and LOM
+ KVM (keyboard, video, and mouse) switches, serial console servers, and lightsout 
+management (LOM) are tools that make management of datacentre devices 
+easier.
+ They can be instrumental in making maintenance windows easier to run by 
+providing remote access to the console or other functions of a machine when it 
+is not fully up and available on the network.
+ Communications
+ For maintenance windows that extend beyond a single campus, the best way to 
+communicate is typically to have one or more conference bridges that remain 
+open during the entire maintenance window.
+Maintenance Windows
+
+===== PDF PAGE 23 =====
+Comprehensive System Testing
+ If the window has been short, you may need to test only the few 
+components that you worked on.
+ However, if you have spent your weekend-long maintenance 
+window taking apart various complicated pieces of machinery 
+and then putting them back together, and done all this work 
+under a time constraint, you should plan on spending all day 
+Sunday doing system testing.
+ Finally, when all the machines in the datacentre have been 
+successfully booted in the correct order, the flight director splits 
+the SA team into groups.
+ The teams are given instructions about which machines they are 
+responsible for and which tests to perform on them.
+Maintenance Windows
+
+
+===== PDF PAGE 24 =====
+Re-enabling Remote Access
+ The final act before leaving the building should be to re-enable 
+remote access and restore the voicemail on the helpdesk 
+phone.
+ It can be easily forgotten after an exhausting weekend, but 
+remote access is a very visible, inconvenient, and embarrassing 
+thing to forget
+Maintenance Windows
+High-Availability Sites
+ By the very nature of their business, high-availability sites cannot 
+afford to have large planned outages.
+ These sites still need to perform maintenance on the systems in 
+service.
+
+===== PDF PAGE 25 =====
+Maintenance Windows
+High-Availability Sites
+ The Similarities
+ Most of the principles described previously for maintenance 
+windows at a corporate site apply to high-availability sites:
+ High-availability sites need to schedule the maintenance window so 
+that it has the least impact on their customers.
+ These sites need to let their customers know when maintenance 
+windows are scheduled.
+ Planning and doing as much as possible beforehand is critical.
+ There must be a flight director who coordinates the scheduling and 
+tracks the progress of the tasks.
+ Each item should have a change proposal.
+ The site needs to tightly plan the maintenance window.
+ Everything must be fully tested before it is declared complete.
+ LOM, remote KVM, and console access benefit all sites.
+
+===== PDF PAGE 26 =====
+Maintenance Windows
+High-Availability Sites
+ The Differences
+ Maintenance windows for high-availability sites differ in the 
+following ways:
+ A prerequisite is that the site must have redundancy if it is to have high 
+availability.
+ It is not necessary to disable access. Services should remain available.
+ Because ISPs and e-commerce sites do not have on-site customers, 
+being available and responsive is still important.
+ A post-maintenance communication is usually not required, unless 
+customers must be informed about remaining problems.
+ The most important difference is that the redundant architecture of 
+the high availability site must be taken into account during the 
+maintenance window planning.
+ Availability of the service as a whole must be closely monitored during 
+the maintenance window.
+
+===== PDF PAGE 27 =====
+Centralization Overview
+Centralization Overview
+ Services may be organized in ways that are centralized, 
+decentralized, or distributed.
+ An example of a centralized model would be an entire company 
+using one large email platform located in its headquarters.
+ A decentralized model would be where each division designs, 
+creates, and operates its own email system.
+ A distributed model would be where one centralized 
+organization creates a single standard and deploys it once in 
+each division and then centrally manages and operates them 
+all.
+
+
+===== PDF PAGE 28 =====
+Centralization Overview
+Rationale for Reorganizing
+ Reducing that cost through increased efficiency is one of the 
+main drivers behind centralization.
+ However, end-user satisfaction is typically linked to having on-site 
+support and fast response times, which can lead to a 
+decentralized model.
+ Rationale for Centralization
+ Centralization brings efficiency by reducing duplication of effort.
+ For example, new versions of software are tested, certified, and 
+deployed by a single central team, rather than having a team in each 
+department or region going through the same process.
+ Centralization should also improve the quality of the service.
+
+===== PDF PAGE 29 =====
+Centralization Overview
+Rationale for Reorganizing
+ Rationale for Decentralization
+ Sometimes decentralization takes the form of a division or customer 
+group that decides to break away from a centralized service or 
+organization.
+ The motivation is usually one of the following:
+ Low quality: The group may feel they can provide a better-quality 
+service
+ Needs not met: The central service does not meet certain needs, 
+and no amount of negotiation has resulted in a commitment for the 
+features to be added.
+ Lack of customizability: To be efficient, a centralized service may 
+be provided in a way that restricts customization.
+ Cost: Groups may feel they can perform a service at a lower cost
+ Desire for new features: A group may want to stay on the cutting 
+edge of technology and be dissatisfied with a central IT 
+organization that lags behind.
+
+===== PDF PAGE 30 =====
+Centralization Overview
+Approaches and Hybrids
+ Hybrid strategies include the following:
+ Strictly centralized service: The service is run by a central group, there 
+are no others, and the service is self-contained.
+ Centralized platform: The service is centralized but individual teams or 
+departments can subscribe to it and use it as necessary.
+ Centralized with decentralized delegation: There is a central team that 
+is responsible for the service’s architecture, maintenance, oncall 
+responsibility, and so on. However, some support elements are 
+delegated to decentralized units.
+ Centralized with well-defined exceptions: The service is centralized but 
+independent teams can set up their own services in parallel.
+ Centralized with leaky exceptions: This is similar to the previous 
+strategy but the approval process has “no teeth” and all exception 
+requests are approved.
+
+===== PDF PAGE 31 =====
+Centralization
+Recommendations
+Centralization
+Recommendations
+ Architecture
+ With the centralized approach the company has a unified 
+architecture, and all services are built the same way in all regions and 
+all divisions of the company.
+ A unified architecture function makes the site easier to support.
+ Security
+ For the security of the site we recommend the strictly centralized 
+service model.
+ Site security involves defining global policies governing access to 
+corporate assets, and introducing technological and process-based 
+solutions to implement those policies.
+ A strictly centralized approach is the best because when security is not 
+treated holistically, the discrepancies in policies result in an 
+inconsistent security model for the company.
+ Inconsistent security and insufficient access controls for sensitive data 
+are major causes of security breaches.
+
+===== PDF PAGE 32 =====
+Centralization
+Recommendations
+Security
+ Authorization
+ Authorization means defining resource access entitlements.
+ Authentication is how someone identifies himself to the system.
+ Strictly centralized authentication means users have a single set of 
+credentials that are used for everything at the company
+ Providing a centralized platform for authorization enables resource 
+owners and internal application developers to easily define their own 
+resource access policies.
+
+
+===== PDF PAGE 33 =====
+Centralization
+Recommendations
+Security
+ Extranet Connections
+ Extranet connections are physical or virtual private network links to 
+third parties, such as other companies.
+ We recommend the centralized platform model because extranet 
+links are a component of site security where there normally are several 
+different access models, with different requirements.
+ The central team needs to provide a set of standard extranet access 
+models that other groups can subscribe to for their extranet needs.
+ Data Leakage Prevention
+ Many companies implement data leakage prevention (DLP) controls 
+to prevent accidental or deliberate sharing of confidential data or 
+intellectual property outside the company.
+ For most companies these security measures should be implemented 
+as a strictly centralized service.
+
+===== PDF PAGE 34 =====
+Centralization
+Recommendations
+Infrastructure
+ Infrastructure services should be unified, giving the same level of 
+reliability and service across the whole company.
+ Centralizing infrastructure services ensures universal compatibility, 
+simplifies documentation and support, reduces costs, fosters 
+automation, and improves services.
+ Data Centre
+ Datacentre design, processes, and procedures should be centrally 
+defined and managed.
+ These sorts of standards are easy to specify and adhere to when 
+building out a new data centre.
+ Datacentre operations are delegated to local teams, reporting to a 
+single global head of datacentre operations.
+
+===== PDF PAGE 35 =====
+Centralization
+Recommendations
+Infrastructure
+ Networking
+ The network includes everything from the LAN to the WAN.
+ We recommend centralized network design and tooling, with 
+decentralized delegation to regional teams.
+ There should also be a single central network operations centre (NOC) 
+that has the full picture of everything that is going on in the network.
+ IP Address Space Management
+ Central management of the IP address space ensures that networks 
+are not used in more than one location.
+ In large companies, large blocks of address space are allocated to 
+regional teams, who then allocate subnets for specific office, data 
+centre, or backbone usage.
+ Namespace Management
+ It reduces the complexity that can make debugging difficult, 
+especially when problems have a DNS or DHCP component.
+ When DNS is not centralized, DNS zones need to be delegated to 
+independent systems that are managed by different teams.
+
+===== PDF PAGE 36 =====
+Centralization
+Recommendations
+Infrastructure
+ Monitoring
+ Centralization also reduces the chance that multiple teams will poll 
+the same device or service.
+ It enables correlation between events so that the root cause of a 
+problem can be identified more quickly.
+ Providing monitoring as a centralized platform means that anyone 
+can subscribe to the monitoring service. Subscribers need to be able 
+to define:
+  What to monitor
+  How to monitor it
+  Their own monitoring plug-ins
+  How frequently something is monitored
+  Whom to alert
+  The severity of the alert
+ Logging
+ Centralized logging enables correlation between events so that the 
+root cause of a problem can be identified more easily.
+ A centralized logging service should have dedicated high-end 
+storage with lots of capacity and an automated archiving and 
+retrieval system for older data.
+
+===== PDF PAGE 37 =====
+Centralization
+Recommendations
+Support
+ Our support infrastructure is often the only way we are visible to 
+our customers.
+ Centralization does not mean that the entire IT team needs to be 
+in a single building, country, or region.
+ However, regional staff should report into a unified global IT 
+organization under the CIO.
+ Helpdesk
+ All companies should have a single centralized helpdesk that all end 
+users contact when they need support.
+
+
+===== PDF PAGE 38 =====
+Centralization
+Recommendations
+Support
+ End-User Support
+ End-user satisfaction surveys typically show that customer satisfaction 
+is strongly linked to having a local support presence.
+ However, having on-site staff at every location can be expensive for 
+companies with many small offices, and it is harder to keep isolated 
+support staff in the loop.
+ Companies need to find a balance between these competing 
+influences. Some common models include having someone from end-
+user support on-site on particular days.
+
+
+===== PDF PAGE 39 =====
+Centralizing a Service
+Centralizing a Service
+ We are proponents of centralization. However, most large sites, 
+and many midsize sites, have a number of services that are 
+decentralized.
+ When you have identified a service that is a good candidate for 
+centralization, take the following steps:
+ 1. Understand the current solution.
+ 2. Make a detailed plan for building and migrating to a centralized 
+service.
+ 3. Get management support and, if necessary, a budget.
+ 4. Fix the problems that led to decentralization.
+ 5. Provide an excellent centralized service.
+ 6. Start slowly and ramp up.
+ 7. Look for low-hanging fruit.
+
+===== PDF PAGE 40 =====
+Centralizing a Service
+Understand the Current Solution
+ The first phase of centralizing a decentralized service involves 
+understanding the current solution:
+ its features
+ its strong points
+ Its weak points
+ its associated change processes
+ Its users
+ It is also important to understand the reason that the service is 
+decentralized before you centralize it.
+ Devise a short questionnaire that is used for interviewing all the 
+stakeholders. For example:
+ How do you request configuration changes to the service? Is there an approval 
+process?
+ How long does it take before configuration changes are implemented? Is there 
+an SLA for how long requests should take?
+
+
+===== PDF PAGE 41 =====
+Centralizing a Service
+Make a Detailed Plan
+ Once you understand the current solution(s), the next step is to 
+define what, if anything, needs to change in the centralized 
+service.
+ Then you need to build a detailed plan of all the work that needs 
+to be done, who needs to be involved, and approximately how 
+much of each group’s time it will take.
+ Consider also the effort and teams who need to be involved in 
+migrating the decentralized services to the centralized service.
+Get Management Support
+ At most companies, before you can centralize services, you will 
+need management support.
+ Management support is essential for pushing through a 
+potentially unpopular change.
+ Explain the benefits of centralization in terms of how this change 
+will benefit the business and the users.
+
+===== PDF PAGE 42 =====
+Centralizing a Service
+Fix the Problems
+ Once you have management support to proceed with the 
+centralization project, the first thing that you need to do is fix any 
+problems that have been identified with the current service.
+ Look at your existing list of known issues and anything that you 
+learned during the questionnaire phase to identify and prioritize 
+problem areas.
+Provide an Excellent Service
+ It is important that the new service is significantly better than the 
+service it replaces in ways that are tangible to the direct users.
+ Make the centralized service fast, highly reliable, full-featured, 
+automated, and customizable.
+ A centralized service should be cheaper to run and better 
+supported than a series of decentralized ones.
+ If the new service is really good, then others will hear about it, 
+and be more inclined to use it.
+
+===== PDF PAGE 43 =====
+Centralizing a Service
+Start Slowly
+ This is particularly important for a brand-new service. You do not 
+want to have a big, visible outage on the first day.
+ Start with those users who will be most tolerant of failures.
+ Take some time at the beginning to get experience with the new 
+service with a friendly audience. Find and fix any bugs or 
+performance issues.
+When to Decentralize
+ For all that we advocate a centralized approach, we sometimes 
+find ourselves in a situation where we end up building a 
+decentralized service for ourselves, because the centralized one 
+does not meet our needs.
+ Whenever you find yourself in a situation where you are seriously 
+considering building your own decentralized service, first try really 
+hard to work with the group providing the centralized service.
+
+===== PDF PAGE 44 =====
+Centralizing a Service
+Managing Decentralized Services
+ Sometimes we find ourselves in a situation where we need to 
+work with decentralized services.
+ In this situation it is important to define clear boundaries between 
+the services that are run by different groups, so that problems in 
+one service cannot propagate into others.
+ Use existing technologies and protocols to define clear 
+boundaries and interfaces.
+ Security is another example. If different parts of the company 
+have different security policies and solutions, then it is in the best 
+interest of both parts to isolate themselves from the other part.
+ If you find yourself in a situation where there are decentralized 
+services and it is not possible to leverage technologies to define 
+clear boundaries, you should push hard for centralization.
+
+===== PDF PAGE 45 =====
+End of chapter 7

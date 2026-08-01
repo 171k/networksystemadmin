@@ -1,0 +1,984 @@
+
+===== PDF PAGE 1 =====
+ITT 420
+Chapter 5
+Infrastructure
+Prepared by: Muhammad Azizi 
+(mazizi@fskm.uitm.edu.my) 
+1 of 56
+
+===== PDF PAGE 2 =====
+Chapter 5 Objectives
+ Discuss the the design of office networks, 
+datacenter and WANs.
+ Describes best practices for monitoring, 
+managing, and supporting an enterprise 
+network.
+ Discuss datacentre operations.
+ Discuss the fundamentals requirements of 
+running a datacenter.
+ITT 4202
+of 56
+
+===== PDF PAGE 3 =====
+Chapter 5 Outline
+ Network Architecture
+ Network Operations
+ Datacentres Overview
+ Running a Datacentres
+ITT 4203
+of 56
+
+===== PDF PAGE 4 =====
+Network Architecture
+ This chapter is about the design of office 
+networks (wired and wireless), datacentre 
+networks, and the wide area networks 
+(WANs) that connect them.
+ A site’s network is the foundation of its 
+infrastructure.
+Network Architecture
+4
+of 56
+
+===== PDF PAGE 5 =====
+of 56
+5
+
+
+===== PDF PAGE 6 =====
+Physical Versus Logical
+ A network can be depicted in two different 
+ways:
+ Physical Network
+ Consists of the physical wires and devices that 
+make up the network
+ Logical Network
+ Describes the software based partitions, segments, 
+and connections that we overlay on the physical 
+network.
+ VLANs make networks easier to manage.
+ Now we build a single physical infrastructure 
+and carve out the individual LAN segments as 
+VLANs
+ VLAN enable switch to segregate traffic 
+based on which port it arrived on
+Network Architecture6
+of 56
+
+===== PDF PAGE 7 =====
+The OSI Model
+ Open Systems Interconnection (OSI)is a reference 
+model for network, it looks at the network as 
+logical layers
+Network Architecture
+7
+of 56
+
+===== PDF PAGE 8 =====
+Wired Office Networks
+ Wired connections are more reliable because 
+they are a physical connection, with no radio 
+interference as with WiFi.
+ They are also faster, but lack mobility
+ The speed and lack of interference are particularly 
+noticeable for people using high-bandwidth or 
+low-latency applications, such as soft phones, 
+voice over IP (VoIP), streaming video, and 
+multimedia conferencing systems.
+Network Architecture
+8
+of 56
+
+===== PDF PAGE 9 =====
+Wired Office Networks
+ Physical Infrastructure
+ For a wired network, a person plugs a device into a 
+network jack at his or her desk.
+ That network jack runs through walls and ceilings until it 
+terminates in another jack in a wiring closet or 
+intermediate distribution frame [IDF].
+ In the IDF, each jack is patched to a switch port using 
+patch cable
+ In a small company, IDF is in computer room. 
+ In large buildings, there will be several IDFs—typically one 
+or more per floor. IDFs will be connected back to a main 
+distribution frame (MDF)
+Network Architecture
+9
+of 56
+
+===== PDF PAGE 10 =====
+Wired Office Networks
+ Logical Design
+ On top of the physical infrastructure is the logical design. 
+The office network is divided into individual network 
+segments.
+ The primary strategies for dividing an office LAN into 
+subnets are based on floor plan, security level, or device 
+type:
+ One big subnet: There is a single subnet. This design works well 
+for a small office.
+ Floor plan–centric: One subnet is allocated to each hallway 
+or area of a building.
+ Security level: Privileged users are on a different subnet.
+ Change control level: Subnet assignment is based on stability 
+needs. When there is a lot of change control, it can be useful 
+to have separate subnets,
+ Device function: Particular devices are put on separate 
+subnets. For example IOT device on different subnet than 
+Workstation and servers
+Network Architecture10
+of 56
+
+===== PDF PAGE 11 =====
+Wired Office Networks
+ Network Access Control
+ Network access control (NAC) determines whether a 
+device that connects to your network is permitted to 
+join, and which VLAN it should be in.
+ With NAC, a device that connects to a jack in an office 
+is first authenticated.
+ NAC options include the following:
+ MAC based: NAC involves checking the MAC address of the 
+machine against a database of authorized MACs.
+ Authentication based: NAC involves the end user supplying 
+credentials to connect to the network. These may be a 
+simple username and password
+ Certificate based: NAC involves a one-time verification that 
+the person is who he or she claims to be, and then installs a 
+certificate on the person’s machine.
+Network Architecture11
+of 56
+
+===== PDF PAGE 12 =====
+Wireless Office Networks
+ Wireless networks (Wi-Fi) are more convenient than 
+wired networks.
+ There is no need to search for a free jack and a long-
+enough cable.
+ Physical Infrastructure
+ The most important aspects of a wireless network are 
+that it has good coverage and sufficient bandwidth.
+ Don’t install a home Wifi base station, use enterprise 
+class access point.
+ An office is larger and has more users, more sources of 
+interference, and higher bandwidth demands.
+Network Architecture
+12
+of 56
+
+===== PDF PAGE 13 =====
+Wireless Office Networks
+ Logical Design
+ NAC will put devices into different VLANs, based on the 
+type of device and device authentication.
+ For example, you may put company-owned devices into 
+one VLAN, employee-owned devices into another, and 
+guest devices into a third.
+ Wireless access should be unified across the company. 
+Use the same SSID in all company branch.
+ Another aspect of your VLAN strategy for wireless 
+networks is to consider the fact that wireless devices are 
+usually mobile.
+ While you might not permit guests on your wired network, 
+it has become accepted practice to have a guest 
+wireless network.
+ Some authentication should still be required for the guest 
+WiFi so that people can’t just sit outside your office and 
+use your company’s infrastructure to launch attacks 
+against other sites.
+Network Architecture13
+of 56
+
+===== PDF PAGE 14 =====
+Datacentre Networks
+ The LAN in your datacentre has different requirements 
+than the LAN in your office.
+ The datacentre has a higher density of machines and 
+higher bandwidth demands.
+ Rather than jacks connected to IDFs, we have racks 
+of equipment.
+Network Architecture
+14
+of 56
+
+===== PDF PAGE 15 =====
+Datacentre Networks
+ Physical Infrastructure
+ The three most popular are having a central switch, 
+individual switches in each rack, and datacentre fabric 
+systems.
+ Central Switch with Patch Panels
+ The datacentre has a single core switch, and each machine 
+connects to it.
+ To make this manageable, each machine in a rack connects 
+to a patch panel in the same rack.
+ The patch panel brings connections to the network rack, and 
+a patch cable connects the machine to a switch port.
+ The downsides of this design are that patch panels take up a 
+lot of valuable datacentre space, and that this approach 
+involves a lot of cabling.
+Network Architecture15
+of 56
+
+===== PDF PAGE 16 =====
+Datacentre Networks
+ Physical Infrastructure
+ Central Switch with Patch Panels
+Network Architecture
+16
+of 56
+
+===== PDF PAGE 17 =====
+Datacentre Networks
+ Physical Infrastructure
+ One TOR per Rack Connected to a Core
+ Each rack has its own switch called a TOR (top of 
+rack) switch
+ Machines in a rack connect to the rack’s TOR. The 
+TORs all have high-speed connections to a central 
+switch or switches.
+ To improve resiliency each rack has two TOR switches 
+and each machine has one connection to each TOR.
+ The downsides of this design are that the bandwidth 
+out of the rack is limited by the switch uplink
+ And this approach involves a lot of switches, each of 
+which must be maintained.
+Network Architecture17
+of 56
+
+===== PDF PAGE 18 =====
+Datacentre Networks
+ Physical Infrastructure
+ One TOR per Rack Connected to a Core
+Network Architecture
+18
+of 56
+
+===== PDF PAGE 19 =====
+Datacentre Networks
+ Physical Infrastructure 
+ TORs Connected as a Fabric
+ In a unified fabric product, each TOR is an extension of the 
+core switch.
+ All configuration and operational procedures are done on 
+the core switch rather than having to log into each individual 
+TOR.
+ It is as if you have one big switch for the entire datacentre. 
+This greatly simplifies management and upgrades.
+ Clos fabrics use what’s known as a Clos topology to permit 
+groups, or pods, of racks to have almost infinitely scalable 
+bandwidth to the rest of the network by providing multiple 
+paths between any two points.
+Network Architecture19
+of 56
+
+===== PDF PAGE 20 =====
+Datacentre Networks
+ Physical Infrastructure 
+ TORs Connected as a Fabric
+Network Architecture
+20
+of 56
+
+===== PDF PAGE 21 =====
+Datacentre Networks
+ Logical Design
+ Datacentre subnets should be entirely separate from 
+non-datacenter subnets.
+ Moreover, a datacentre subnet should never be 
+configured outside the datacentre.
+ Datacentre subnets are usually allocated based on a 
+combination of security zone and the functional usage 
+of the interfaces on that subnet.
+ Most companies use different subnets to separate 
+devices that are in different security zones.
+ Subnets for different security zones should be on 
+separate physical devices, rather than on different 
+VLANs on the same device.
+Network Architecture21
+of 56
+
+===== PDF PAGE 22 =====
+WAN Strategies
+ Offices and datacenters are connected via long-
+distance network technologies.
+ This interconnection between locations is called a 
+wide area network (WAN).
+ There are two primary aspects to this strategy: 
+topology and technology
+ In addition, you should consider the level of 
+redundancy
+ Topology
+ Common topologies include star, multi-star, ring, and 
+cloud.
+ Star Topology
+ there is one central location, and every other site connects 
+directly to that location.
+ If the datacentre fails, the company’s whole network 
+infrastructure and services will go down.
+ A more resilient variation on the star topology is the dual star 
+topology, where there is backup datacentre
+Network Architecture22
+of 56
+
+===== PDF PAGE 23 =====
+WAN Strategies
+ Topology
+ Star Topology
+Network Architecture
+23
+of 56
+
+===== PDF PAGE 24 =====
+WAN Strategies
+ Topology
+ Multi-star Topology
+ Large companies may choose a multi-star or hub topology. 
+In this design, each region has a star, or dual-star, topology, 
+with each site connecting to the regional hub(s).
+ Ring Topology
+ Companies with several locations that are not too 
+geographically distant may elect to use a ring topology
+ In a ring topology, each site connects to two others.
+ The main disadvantage of a ring topology is that adding 
+another site while maintaining a ring topology is quite 
+disruptive.
+ Cloud Topology
+ each site connects to a provider’s network.
+ You don’t know what the provider’s topology is, but packets 
+you send in come out the desired location.
+ The benefit of this topology is that someone else takes care 
+of the details. It is also cost-effective because costs are 
+amortized over many customers.
+Network Architecture24
+of 56
+
+===== PDF PAGE 25 =====
+WAN Strategies
+Network Architecture
+25
+of 56
+
+===== PDF PAGE 26 =====
+WAN Strategies
+ Technology
+ The technology one uses to implement a topology 
+generally falls into one of two categories: dedicated 
+lines or virtual private networks (VPNs) over the Internet.
+ With a dedicated line, you lease a network connection 
+between two points.
+ Dedicated lines provide guaranteed bandwidth and latency, 
+which are stipulated in the contract with the network vendor.
+ The cost of dedicated lines typically increases with the distance 
+between the two sites.
+ VPNs across the Internet are typically a more cost-effective 
+approach. However, bandwidth and latency are not 
+guaranteed and can be highly variable.
+ VPN problems can be hard to find and diagnose, and next to 
+impossible to resolve, as they may be caused by problems with 
+Internet infrastructure.
+ A hybrid approach is also possible, where each site has one 
+dedicated line to another site, and uses a VPN connection for 
+redundancy.
+Network Architecture26
+of 56
+
+===== PDF PAGE 27 =====
+Routing
+ To get traffic from one subnet to another, it needs to 
+be routed.
+ Routing can be complex, particularly for large sites. 
+Your aim should be to keep the routing as simple and 
+easy to understand as possible.
+ There are three primary strategies used to route 
+traffic: static configurations, routing protocols, and 
+exterior gateway protocols.
+ Static Routing
+ If there are two routers, with some subnets connected to 
+router A and others connected to router B, one can 
+manually enter static routes on router A for each of 
+router B’s subnets, and vice versa.
+ While this is very simple, it is not very flexible.
+ As the number of routers increases, the manual 
+configuration becomes untenable.
+ Only useful for small site
+Network Architecture27
+of 56
+
+===== PDF PAGE 28 =====
+Routing
+ Interior Routing Protocol
+ Another strategy is to use a routing protocol, such as 
+OSPF and EIGRP, that enables each router to 
+communicate with its neighbouring routers to advertise 
+which subnets are connected to it.
+ Each router then uses this information to update its 
+routing table.
+ If a subnet is down or disconnected, the routing protocol 
+informs all other routers that it is no longer available.
+ Exterior Gateway Protocol
+ This routing protocol communicates between 
+autonomous systems.
+ The most common EGP is Exterior Border Gateway 
+Protocol (EBGP).
+ An EGP such as EBGP can be used when different parts 
+of a company have their own network teams.
+Network Architecture28
+of 56
+
+===== PDF PAGE 29 =====
+Internet Access
+ Part of your network architecture involves defining 
+how and where it will connect to the Internet.
+ there are a few different approaches
+ The first is to have a single connection to the Internet for 
+the whole company.
+ The second is to have a limited set of connections, 
+perhaps one or two per geographic region.
+ The third approach is to have an Internet connection at 
+every site.
+ There are two aspects to Internet connectivity:
+ The first aspect is outbound Internet access: how people 
+in the company access services on the Internet.
+ The second aspect is inbound access: how the company 
+makes services available on the Internet.
+Network Architecture29
+of 56
+
+===== PDF PAGE 30 =====
+Internet Access
+ Outbound Connectivity
+ Many companies choose to limit their exposure to a single site. 
+This approach makes it easier to closely monitor those threats 
+and attacks, and to put mitigation measures in place.
+ However, this one location is a single point of failure, and a 
+problem there can cut the whole company off from the 
+Internet.
+ The end-user experience can be improved by having multiple 
+Internet connections, usually one per regional hub. Security is still 
+manageable, because the number of Internet access locations 
+is still strictly limited.
+ Inbound Connectivity
+ One approach that can be used for inbound access is to not 
+provide those services from the company’s own premises. These 
+services can be placed in a service provider’s datacentre, with 
+high-speed, highly redundant Internet access
+ The other approaches commonly used for inbound connectivity 
+are to provide services from one central location, or from a few 
+regional locations.
+Network Architecture30
+of 56
+
+===== PDF PAGE 31 =====
+Software-Defined Networks
+ Software-defined networks (SDN) take a different 
+approach than traditional routing to control the flow 
+of traffic between devices on the network.
+ An SDN makes routing as programmable as any other 
+application.
+ It enables applications to specify their needs (such as 
+low latency or a certain amount of bandwidth) to a 
+network controller.
+ The network controller has an overview of the 
+network. It can dynamically configure the network 
+devices to create a specific path through the 
+network for that application’s traffic.
+Network Architecture
+31
+of 56
+
+===== PDF PAGE 32 =====
+IPV6
+ The Need for IPv6
+ IPv4 has only about 3.7 billion usable IP addresses. This 
+may sound like a lot, but the Internet ran out of IP 
+addresses to allocate in 2015.
+ Also, IPv4 does not scale very well. Broadcasts limit the 
+size of a LAN, and there are other problems.
+ IPv6 replaces broadcasts with multicast, and fixes other 
+problems as well.
+ IPv6 is not upward compatible with IPv4.
+ Deploying IPv6
+ IPv6 is not difficult to understand or deploy.
+ At sites that have deployed IPv6, users don’t even 
+notice.
+ There are a number of strategies that you can use for a 
+gradual roll-out of IPv6.
+Network Architecture32
+of 56
+
+===== PDF PAGE 33 =====
+IPV6
+ Deploying IPv6 Strategies
+ Start with the Outside and Move Inward
+ A good first step is to start with your Internet-facing 
+infrastructure, and move inward.
+ Choose an application, such as a web site, that is behind a 
+load balancer, and implement IPv6 from your ISP to the load 
+balancer.
+ Start with Less Critical Networks
+ Another obvious candidate for an early IPv6 deployment is 
+your guest WiFi network.
+ This deployment can then expand out to cover BYOD WiFi, 
+guest and BYOD wired
+ Use Test Labs and Slow Roll-Out Strategies
+ Deploying IPv6 isn’t hard, but like any change, it should be 
+tested and rolled out in a controlled manner.
+Network Architecture
+33
+of 56
+
+===== PDF PAGE 34 =====
+Network Operations
+ If the network fails, so does everything that is 
+connected to it, and everything that relies on those 
+devices.
+ This chapter describes best practices for monitoring, 
+managing, and supporting an enterprise network, 
+including recommendation for tools and 
+organizational structures to facilitate supporting the 
+network, particularly in large enterprises.
+Network Operations
+34
+of 56
+
+===== PDF PAGE 35 =====
+Monitoring
+ Monitoring provides visibility that facilitates all other 
+operational tasks.
+ Without monitoring You won’t know that you have a 
+problem until someone reports it, and you certainly 
+won’t be able to prevent the problem from 
+happening.
+ These are the minimal items that should be monitored 
+for a network:
+ Network devices (routers and switches, not endpoints 
+such as PCs):
+ – Health (up/down status)
+ – Internal components (blades, slaves, extensions)
+ – Resource utilization (memory, CPU, and so on)
+ For each WAN link, LAN trunk plus the individual links that 
+make up a bonded set:
+ – Health (up/down status)
+ – Utilization (how much capacity is in use)
+ – Error counts
+Network Operations35
+of 56
+
+===== PDF PAGE 36 =====
+Management
+ Management means controlling device 
+configuration and firmware versions.
+ Access and Audit Trail
+ Any changes that are made to network devices need to 
+generate an audit trail that enables one to trace the change 
+back to a person.
+ Audit trails are a regulatory requirement for many businesses
+ The audit logs should be sent off the device to a centralized 
+logging service, for event correlation and subsequent review as 
+and when they are required.
+ Configuration Management
+ Configurations should be based on standardized 
+templates.
+ Track configuration changes by taking backups, or 
+snapshots, of device configurations. Typically network 
+devices have plaintext configuration files.
+ Both commercial and open source products are 
+available that collect and store
+ Network configurations for historical purposes. Example is 
+RANCID (Really Awesome New Cisco config Differ)
+Network Operations36
+of 56
+
+===== PDF PAGE 37 =====
+Management
+ Life Cycle
+ The life cycle of a device is the series of stages it goes 
+through between being purchased and ultimately 
+disposed of. Life Cycle phase:
+ In stock
+ Assigned
+ Installed
+ Deploying
+ Operational
+ Servicing
+ Decommissioning
+ Disposed
+Network Operations37
+of 56
+
+===== PDF PAGE 38 =====
+Management
+ Software Versions
+ The other important aspect of network management is 
+patching and upgrading the software, or firmware, that 
+is running on the network devices.
+ The proliferation of different versions of code makes it 
+difficult to automate, and difficult to keep up-to-date 
+with vulnerability patching and bug tracking.
+ Deployment Process
+ The new release should be subjected to an intensive 
+testing process in the lab. 
+ The deployment to the lab equipment and the 
+subsequent testing should both be as automated as 
+possible.
+ Use virtualization to build a test network and to simulate 
+device and link failures.
+ As with other software, start slowly when deploying new 
+versions into production, and start with less critical 
+devices that your least risk-averse customers rely on.
+Network Operations38
+of 56
+
+===== PDF PAGE 39 =====
+Documentation
+ Network documentation has two main purposes.
+ The first is to assist people in troubleshooting problems
+ The second is to explain what the network looks like, how 
+it has been put together
+ There are four main types of documentation:
+ Network design and implementation
+ DNS
+ CMDB
+ Labels
+ Network Design and Implementation
+ Used to bring new team members up to speed.
+ Consists of:
+ Logical & Physical Diagram
+ Bandwidth
+ Latency
+ Vendor contact
+ IP Addressing scheme
+ Protocols and other technical details
+Network Operations39
+of 56
+
+===== PDF PAGE 40 =====
+Documentation
+ DNS
+ Make sure that every interface of every device has 
+matching forward and reverse DNS entries.
+ so that when you are debugging a problem and run a 
+traceroute diagnostic, you can easily understand the 
+path.
+ The naming standard should specify how to include the 
+device name and interface name in the DNS entries.
+ CMDB
+ Essential piece of documentation for troubleshooting 
+and resolving incidents is an accurate inventory system.
+ This information enables you to put together 
+replacement hardware, and quickly find and swap out 
+the problem device.
+ Labelling
+ Physical devices should be labelled on their front and 
+back with their name and asset ID.
+ Network port or cable also need to be labelled
+Network Operations40
+of 56
+
+===== PDF PAGE 41 =====
+Support
+ In small companies, there are a couple of SAs who do 
+everything.
+ In larger companies, support is tiered:
+ L1 Support: A helpdesk that responds to alerts and end-
+user queries and problems.
+ L2 Support: Specialists who take on longer-running or 
+more challenging problems in their area of expertise.
+ L3 Support: subject-matter experts (SMEs) who usually 
+work on projects, but are also the final point of 
+escalation
+Network Operations
+41
+of 56
+
+===== PDF PAGE 42 =====
+Support
+ Tools
+ Getting visibility into your network is immensely powerful, 
+and providing that visibility to other teams empowers 
+your whole company to perform better and more 
+efficiently.
+ Example of such Tools are:
+ Diagnostics for Office Networks
+ Gather information about MAC address or everything about a jack 
+and network, so that we can gather about end users workstation 
+usage.
+ Smart Network Sniffers
+ capture and analyse network traffic on the fly, storing statistical 
+data about top talkers, top applications, and so on. 
+ provide flow reports with latency, packet loss, and TCP statistics 
+such as out-of-order packets, retransmission rates, and 
+fragmentation.
+ Network Path Visualization
+ A network path visualization tool can be used to show the path that 
+packets take from A to B, and from B back to A, which can expose 
+routing asymmetries.
+Network Operations42
+of 56
+
+===== PDF PAGE 43 =====
+Datacentres Overview
+ Datacentres are where servers and network gear are housed.
+ There are many types of locations:
+ Datacenter: A large facility purpose-built for housing computing 
+equipment. Usually a dedicated building but sometimes a floor 
+of a building.
+ Colocation (“colo”) space: A datacenter run by one 
+organization, which then rents space to other companies.
+ Computer room: A single room in an office building.
+ Computer closet: A small closet, usually only large enough for 
+one rack.
+ Telecom closet or patch room: A small closet with cross-
+connecting wires; no active equipment or cooling. Sometimes 
+called the demarc room.
+Datacentres Overview 
+43
+of 56
+
+===== PDF PAGE 44 =====
+Build, Rent, or Outsource
+ Option or strategies for companies and organization regarding 
+datacenters
+ Building
+ Building and managing a reliable datacentre is very expensive and 
+requires staff with a diverse set of skills.
+ Therefore, designing and building a datacentre is generally done only by 
+very large companies.
+ Renting
+ For companies with a small or moderate amount of server real estate, it is 
+cheaper to rent space at a colocation facility.
+ Outsourcing
+ Companies with a small or moderate amount of server real estate often 
+outsource the hardware management by using an infrastructure as a 
+service (IaaS) offering.
+ No Datacenter
+ Some companies avoid the need to think about any datacenter space 
+at all by relying on web-based application providers, known as software 
+as a service (SaaS). E.g. Google Apps, Office 365, Dropbox
+ Hybrid
+ It is common to see a mixture of these strategies.
+Datacentres Overview 44
+of 56
+
+===== PDF PAGE 45 =====
+Requirements
+ In datacentre there are requirements which are a mixture of business 
+requirements and technical requirements.
+ Business Requirements
+ Availability
+ How reliable does the service need to be? Which time zones are the 
+people accessing the service going to be in?
+ Business Continuity
+ Which requirements does the company have to continue operating, or 
+return to operational status, in case of an outage?
+ Budget
+ How much money can the company spend on IT? What is the budget for 
+operational expenditures (OpEx) versus capital expenditures (CapEx)?
+ Change Control
+ To what extent does the company need to control when IT changes 
+happen, and how much change can happen at once?
+ Regulatory Constraints
+ Which regulations apply to the company that impact IT decisions? Can a 
+given cloud provider guarantee compliance and that its solution will pass 
+any audit?
+ Data Privacy
+ Which additional data privacy requirements does the company have? 
+Even when local laws do not apply, companies may have internal policies 
+with respect to exposure of certain data to third parties.
+Datacentres Overview 45
+of 56
+
+===== PDF PAGE 46 =====
+Requirements
+ Technical Requirements
+ Services and Applications
+ Which services and applications does the company need to run, and 
+which facilities does it require?
+ Most companies will need basic services such as authentication, DNS, 
+DHCP, email, printing, phones, calendaring, meeting software, file 
+sharing, backups.
+ Update Frequency 
+ How up-to-date do the applications and OS installations need to be? 
+How quickly do new features need to be available to the end users?
+ Security
+ Which security requirements does the company have? At a minimum, all 
+companies need to patch security flaws and implement anti-malware measures.
+ Remote Access
+ Do business users need to be able to access any, or all, of the services remotely?
+ Customer Access
+ Which services need to be available to customers? For example, if a corporate 
+web site is available to customers, does it act as an interface to some other 
+applications?
+ Responsiveness
+ Capacity
+Datacentres Overview 46
+of 56
+
+===== PDF PAGE 47 =====
+Running a Datacentre
+ This chapter is about the fundamentals of running a datacentre.
+ At the macro level, running a datacentre is about capacity 
+management: making sure there is enough space, power, and 
+cooling based on the ebb and flow of demand for the datacentre.
+ At the micro level, running a datacentre is about life-cycle 
+management: managing the process of adding and removing 
+machines plus coordinating repairs and maintenance windows.
+Running a Datacentres
+47
+of 56
+
+===== PDF PAGE 48 =====
+Capacity Management
+ A datacentre has a certain amount of space, number of racks, 
+and capacity for power and cooling.
+ One of the most fundamental components of managing a 
+datacentre is tracking the usage of each of these components.
+ Tracking these resources requires an inventory system.
+ Rack Space
+ Tracking rack space is one of the many tasks for which having standard 
+hardware types and an up-to-date inventory system make your work 
+much easier.
+ When you install a machine in a datacentre, assign it a rack and a 
+position in the rack.
+ Once you can track rack space utilization, you can generate graphs and 
+reports based on occupied, reserved, and free space.
+ Power
+ Each component of the power system has a limit. Each UPS can supply 
+only a certain amount of power, as can each generator.
+ The ATS, wiring, circuit breakers, and any other components of the power 
+distribution frame all have limits.
+ There are three important areas to track here: the amount of power that 
+the datacentre is drawing from each UPS, the amount of power that the 
+cooling system is drawing, and the amount of power that the UPS is 
+drawing from the mains.
+Running a Datacentres48
+of 56
+
+===== PDF PAGE 49 =====
+Capacity Management
+ Wiring
+ Like power, the wiring infrastructure is a resource that should be actively 
+managed. This wiring should also be tracked in inventory, with the type of 
+wiring (e.g., copper or fiber).
+ When the availability of infrastructure wiring is also tracked in the 
+inventory system, it can save SAs time when installing new hardware.
+ Network and Console
+ Similarly, the usage of network and console ports should be tracked in 
+inventory.
+ It is frustrating to install a device, only to find out that there are no console 
+ports available.
+ Equally important, when installing a device, you do not want to discover 
+that all the switch ports are already in use.
+Running a Datacentres49
+of 56
+
+===== PDF PAGE 50 =====
+Life-Cycle Management
+ Day-to-day datacentre operations revolve around the life cycle of 
+the computer equipment within that datacentre.
+ The life cycle of datacentre equipment starts with installation, 
+which is followed by a series of moves, adds, and changes, and 
+some maintenance work. Eventually the equipment is 
+decommissioned.
+ Installation
+ Update the inventory to show which device is racked in which location, 
+with its type and additional components.
+ Moves, Adds, and Changes
+ To support changes to modular systems, the inventory system needs to be 
+configured so that devices with expansion capabilities and swappable 
+components are assemblies.
+ Maintenance
+ Most hardware eventually suffers some form of failure. Disks, fans, power 
+supplies, memory, whatever components your machines have
+ Decommission
+ Disposing of a device in the inventory should result in all of the resources 
+that it uses being freed up.
+Running a Datacentres50
+of 56
+
+===== PDF PAGE 51 =====
+Patch Cable
+ Everything in the datacentre is interconnected with patch cables.
+ Patch Cable: The short network cables that one uses to connect 
+from a network outlet to a machine, or between two patch panels.
+ Some sites choose to color-code their network cables. 
+ At the very least, cables of different qualities (Category 5, 
+Category 6) and cables with different wiring (straight through, 
+crossover) should be different colors.
+ All network and console wiring for servers in a rack should stay 
+within that rack
+Running a Datacentres
+51
+of 56
+
+===== PDF PAGE 52 =====
+Labeling
+ All equipment should be labelled on both the front and the back 
+with its full name as it appears in the corporate namespace.
+ Labelling Rack Location
+ Racks should be labeled based on their row and position within 
+the row.
+ Labelling Patch Cables
+ If a machine has multiple connections of the same kind and it is 
+not obvious from looking at the machine which one is used for 
+which function, such as multiple network interfaces that belong 
+on different networks.
+ Label using different colour code
+ Labelling Network Equipment
+ For network equipment that connects to WANs, both the name 
+of the other end of the connection and the link vendor’s identity 
+number for the link should be on the label.
+ Network equipment typically also has facilities for labeling ports 
+in software.
+Running a Datacentres52
+of 56
+
+===== PDF PAGE 53 =====
+Labeling
+Running a Datacentres
+53
+of 56
+
+===== PDF PAGE 54 =====
+Console Access
+ Console servers and keyboard, video, and mouse (KVM) switches 
+make it possible to remotely access a computer’s console.
+ Console servers allow you to maintain console access to all the equipment in 
+the datacentre, without the overhead of attaching a keyboard, video 
+monitor, and mouse to every system.
+Running a Datacentres
+54
+of 56
+
+===== PDF PAGE 55 =====
+Tools and Supplies
+ Your datacenter should be kept fully stocked with all the various 
+cables, tools, and spares you need.
+ Tools
+ Tools should be kept in a cart with drawers, so that the set of tools can be 
+wheeled to wherever it is needed.
+ Mini-forklifts with a hand-cranked winch are excellent choices for putting 
+heavy equipment into racks
+ Spares and Supplies
+ Spares and supplies must be well organized so that they can be quickly 
+picked up when needed and so that it is easy to do an inventory.
+ Many sites prefer to keep spares in a different room with easy access 
+from the datacentre.
+ If possible, you should keep spares for the components that you use or 
+that fail most often.
+Running a Datacentres55
+of 56
+
+===== PDF PAGE 56 =====
+Tools and Supplies
+Running a Datacentres
+56
+of 56
+
+===== PDF PAGE 57 =====
+End of chapter 5
+57
+of 56
