@@ -83,6 +83,7 @@ export function ConceptDiagram({ chapter }: { chapter: number }) {
         {cfg.nodes.map((n, i) => (
           <div className="flow-item" key={n}>
             <button
+              aria-label={`Step ${i + 1}: ${n}`}
               onClick={() => setActive(i)}
               className={`flow-node ${active === i ? "active" : ""}`}
             >

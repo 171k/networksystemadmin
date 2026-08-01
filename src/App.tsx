@@ -4,6 +4,7 @@ import {
   NavLink,
   Route,
   Routes,
+  useLocation,
   useNavigate,
   useParams,
 } from "react-router-dom";
@@ -76,8 +77,23 @@ function Shell({
   const [side, setSide] = useState(true);
   const [mobile, setMobile] = useState(false);
   const [search, setSearch] = useState(false);
+  const location = useLocation();
+  useEffect(() => setMobile(false), [location.pathname]);
+  useEffect(() => {
+    document.body.style.overflow = mobile ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobile]);
   return (
     <div className="app-shell">
+      {mobile && (
+        <button
+          className="mobile-backdrop"
+          aria-label="Close navigation menu"
+          onClick={() => setMobile(false)}
+        />
+      )}
       <aside
         className={`${side ? "" : "collapsed"} ${mobile ? "mobile-open" : ""}`}
       >
@@ -132,7 +148,12 @@ function Shell({
       </aside>
       <main>
         <header>
-          <button className="menu" onClick={() => setMobile(true)}>
+          <button
+            className="menu"
+            aria-label="Open navigation menu"
+            aria-expanded={mobile}
+            onClick={() => setMobile(true)}
+          >
             <Menu />
           </button>
           <button className="global-search" onClick={() => setSearch(true)}>
