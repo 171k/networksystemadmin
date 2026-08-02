@@ -43,6 +43,7 @@ import { expandTerm } from "./data/glossary/abbreviations";
 import { ConceptDiagram } from "./components/diagrams/ConceptDiagram";
 import { ExamFocus } from "./components/ExamFocus";
 import { FinalPrediction } from "./components/FinalPrediction";
+import { TYKTests } from "./components/TYKTests";
 import { Practice } from "./components/exercises/Practice";
 import {
   blankProgress,
@@ -132,6 +133,9 @@ function Shell({
               <NavLink to="/final-prediction">
                 <Sparkles /> Final prediction
               </NavLink>
+              <NavLink to="/tyk-tests">
+                <CircleHelp /> TYK MCQ
+              </NavLink>
               <NavLink to="/glossary">
                 <Library /> Glossary
               </NavLink>
@@ -203,6 +207,7 @@ function Shell({
             />
             <Route path="/exam-focus" element={<ExamFocus />} />
             <Route path="/final-prediction" element={<FinalPrediction />} />
+            <Route path="/tyk-tests" element={<TYKTests />} />
             <Route path="/glossary" element={<Glossary />} />
             <Route
               path="/weak"
