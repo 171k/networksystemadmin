@@ -42,6 +42,7 @@ import {
 import { expandTerm } from "./data/glossary/abbreviations";
 import { ConceptDiagram } from "./components/diagrams/ConceptDiagram";
 import { ExamFocus } from "./components/ExamFocus";
+import { FinalPrediction } from "./components/FinalPrediction";
 import { Practice } from "./components/exercises/Practice";
 import {
   blankProgress,
@@ -128,6 +129,9 @@ function Shell({
               <NavLink to="/exam-focus">
                 <FileText /> Exam focus
               </NavLink>
+              <NavLink to="/final-prediction">
+                <Sparkles /> Final prediction
+              </NavLink>
               <NavLink to="/glossary">
                 <Library /> Glossary
               </NavLink>
@@ -198,6 +202,7 @@ function Shell({
               element={<Review progress={progress} setProgress={setProgress} />}
             />
             <Route path="/exam-focus" element={<ExamFocus />} />
+            <Route path="/final-prediction" element={<FinalPrediction />} />
             <Route path="/glossary" element={<Glossary />} />
             <Route
               path="/weak"
