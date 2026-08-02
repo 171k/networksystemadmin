@@ -39,7 +39,9 @@ import {
   chapters,
   glossary,
 } from "./content/curriculum";
+import { expandTerm } from "./data/glossary/abbreviations";
 import { ConceptDiagram } from "./components/diagrams/ConceptDiagram";
+import { ExamFocus } from "./components/ExamFocus";
 import { Practice } from "./components/exercises/Practice";
 import {
   blankProgress,
@@ -123,6 +125,9 @@ function Shell({
                 <Brain /> Daily review{" "}
                 <em>{Object.keys(progress.reviews).length}</em>
               </NavLink>
+              <NavLink to="/exam-focus">
+                <FileText /> Exam focus
+              </NavLink>
               <NavLink to="/glossary">
                 <Library /> Glossary
               </NavLink>
@@ -192,6 +197,7 @@ function Shell({
               path="/review"
               element={<Review progress={progress} setProgress={setProgress} />}
             />
+            <Route path="/exam-focus" element={<ExamFocus />} />
             <Route path="/glossary" element={<Glossary />} />
             <Route
               path="/weak"
@@ -377,6 +383,19 @@ function Dashboard({ progress }: { progress: Progress }) {
           </p>
         </section>
       </div>
+      <section className="exam-dashboard-callout">
+        <div>
+          <span className="kicker">NEW - PAST-PAPER GUIDED</span>
+          <h2>Study what the examiner keeps asking.</h2>
+          <p>
+            Compressed memory notes and worked February 2025, July 2025 and
+            February 2026 answers for Chapters 5-8.
+          </p>
+        </div>
+        <NavLink className="primary" to="/exam-focus">
+          Open exam focus <ChevronRight />
+        </NavLink>
+      </section>
       <section className="chapters-section">
         <div className="section-head">
           <div>
@@ -479,10 +498,26 @@ function Lesson({
         </div>
         <button
           className={progress.bookmarks.includes(module.id) ? "bookmarked" : ""}
+          aria-label={
+            progress.bookmarks.includes(module.id)
+              ? "Remove module bookmark"
+              : "Bookmark this module"
+          }
+          title={
+            progress.bookmarks.includes(module.id)
+              ? "Remove bookmark"
+              : "Bookmark module"
+          }
           onClick={() => toggle("bookmarks", module.id)}
         >
-          <Bookmark />{" "}
-          {progress.bookmarks.includes(module.id) ? "Bookmarked" : "Bookmark"}
+          <Bookmark
+            fill={
+              progress.bookmarks.includes(module.id) ? "currentColor" : "none"
+            }
+          />
+          <span className="bookmark-label">
+            {progress.bookmarks.includes(module.id) ? "Bookmarked" : "Bookmark"}
+          </span>
         </button>
       </div>
       <div className="lesson-tabs">
@@ -560,9 +595,15 @@ function Lesson({
               <span className="kicker">KEY TERMS</span>
               <h2>Language to remember</h2>
               <div>
-                {concept.terms.map((t) => (
-                  <span key={t}>{t}</span>
-                ))}
+                {concept.terms.map((t) => {
+                  const expansion = expandTerm(t);
+                  return (
+                    <span className="term-pill" key={t} title={expansion}>
+                      <b>{t}</b>
+                      {expansion && <small>{expansion}</small>}
+                    </span>
+                  );
+                })}
               </div>
             </section>
             <Practice
@@ -772,7 +813,9 @@ function Review({
 function Glossary() {
   const [q, setQ] = useState("");
   const items = glossary.filter((g) =>
-    (g.term + g.concept).toLowerCase().includes(q.toLowerCase()),
+    (g.term + g.concept + g.definition)
+      .toLowerCase()
+      .includes(q.toLowerCase()),
   );
   return (
     <div>

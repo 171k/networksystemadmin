@@ -1,4 +1,5 @@
 import type { Chapter, Concept, Module } from "../types";
+import { glossaryDefinition } from "../data/glossary/abbreviations";
 
 const C = (id:string,title:string,simple:string,formal:string,page:string,terms:string[],example:string,diagramId:string):Concept => ({id,title,simple,formal,sourcePage:page,terms,example,diagramId});
 const M = (id:string,chapter:number,title:string,eyebrow:string,minutes:number,concepts:Concept[]):Module => ({id,chapter,title,eyebrow,minutes,concepts,objectives:[`Explain ${title.toLowerCase()} using the lecture terminology`,`Recognise the components, choices and operational trade-offs`,`Apply the chapter recommendations to a realistic IT scenario`]});
@@ -195,4 +196,14 @@ export const chapters: Chapter[] = [
 
 export const allModules = chapters.flatMap((c) => c.modules);
 export const allConcepts = allModules.flatMap((m) => m.concepts);
-export const glossary = allConcepts.flatMap((c) => c.terms.map((term) => ({term,concept:c.title,definition:c.simple,conceptId:c.id,sourcePage:c.sourcePage}))).sort((a,b)=>a.term.localeCompare(b.term));
+export const glossary = allConcepts
+  .flatMap((c) =>
+    c.terms.map((term) => ({
+      term,
+      concept: c.title,
+      definition: glossaryDefinition(term, c.simple),
+      conceptId: c.id,
+      sourcePage: c.sourcePage,
+    })),
+  )
+  .sort((a, b) => a.term.localeCompare(b.term));
